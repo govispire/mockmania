@@ -2,7 +2,21 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { Menu, Search } from "lucide-react";
+import {
+  Menu,
+  Search,
+  LayoutDashboard,
+  BookOpen,
+  FileText,
+  Calendar,
+  TrendingUp,
+  FileUp,
+  Globe,
+  Zap,
+  Users,
+  Settings,
+  Database,
+} from "lucide-react";
 
 type NavItem = {
   title: string;
@@ -10,52 +24,155 @@ type NavItem = {
   icon: React.ReactNode;
 };
 
-export function Sidebar() {
+type RoleBasedNavItems = {
+  [key: string]: NavItem[];
+};
+
+export function Sidebar({
+  role = "student",
+}: {
+  role?: "student" | "admin" | "employee" | "owner";
+}) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
-  const navItems: NavItem[] = [
-    {
-      title: "Dashboard",
-      href: "/dashboard/student",
-      icon: <span className="h-4 w-4">📊</span>,
-    },
-    {
-      title: "Courses",
-      href: "/dashboard/student/courses",
-      icon: <span className="h-4 w-4">📚</span>,
-    },
-    {
-      title: "Tests",
-      href: "/dashboard/student/tests",
-      icon: <span className="h-4 w-4">📝</span>,
-    },
-    {
-      title: "Calendar",
-      href: "/dashboard/student/calendar",
-      icon: <span className="h-4 w-4">📅</span>,
-    },
-    {
-      title: "Performance",
-      href: "/dashboard/student/performance",
-      icon: <span className="h-4 w-4">📈</span>,
-    },
-    {
-      title: "PDF Courses",
-      href: "/dashboard/student/pdf-courses",
-      icon: <span className="h-4 w-4">📄</span>,
-    },
-    {
-      title: "Current Affairs",
-      href: "/dashboard/student/current-affairs",
-      icon: <span className="h-4 w-4">🌍</span>,
-    },
-    {
-      title: "Speed Drill",
-      href: "/dashboard/student/speed-drill",
-      icon: <span className="h-4 w-4">⚡</span>,
-    },
-  ];
+  const roleBasedNavItems: RoleBasedNavItems = {
+    student: [
+      {
+        title: "Dashboard",
+        href: "/dashboard/student",
+        icon: <span className="h-4 w-4">📊</span>,
+      },
+      {
+        title: "Courses",
+        href: "/dashboard/student/courses",
+        icon: <span className="h-4 w-4">📚</span>,
+      },
+      {
+        title: "Tests",
+        href: "/dashboard/student/tests",
+        icon: <span className="h-4 w-4">📝</span>,
+      },
+      {
+        title: "Calendar",
+        href: "/dashboard/student/calendar",
+        icon: <span className="h-4 w-4">📅</span>,
+      },
+      {
+        title: "Performance",
+        href: "/dashboard/student/performance",
+        icon: <span className="h-4 w-4">📈</span>,
+      },
+      {
+        title: "PDF Courses",
+        href: "/dashboard/student/pdf-courses",
+        icon: <span className="h-4 w-4">📄</span>,
+      },
+      {
+        title: "Current Affairs",
+        href: "/dashboard/student/current-affairs",
+        icon: <span className="h-4 w-4">🌍</span>,
+      },
+      {
+        title: "Speed Drill",
+        href: "/dashboard/student/speed-drill",
+        icon: <span className="h-4 w-4">⚡</span>,
+      },
+    ],
+    admin: [
+      {
+        title: "Dashboard",
+        href: "/dashboard/admin",
+        icon: <span className="h-4 w-4">📊</span>,
+      },
+      {
+        title: "Course Management",
+        href: "/dashboard/admin/CourseManagement",
+        icon: <span className="h-4 w-4">📚</span>,
+      },
+      {
+        title: "Test Management",
+        href: "/dashboard/admin/TestManagement",
+        icon: <span className="h-4 w-4">📝</span>,
+      },
+      {
+        title: "Student Management",
+        href: "/dashboard/admin/StudentManagement",
+        icon: <span className="h-4 w-4">👥</span>,
+      },
+      {
+        title: "PDF Management",
+        href: "/dashboard/admin/PDFManagement",
+        icon: <span className="h-4 w-4">📄</span>,
+      },
+      {
+        title: "Current Affairs",
+        href: "/dashboard/admin/CurrentAffairsManagement",
+        icon: <span className="h-4 w-4">🌍</span>,
+      },
+      {
+        title: "Speed Drill",
+        href: "/dashboard/admin/SpeedDrillManagement",
+        icon: <span className="h-4 w-4">⚡</span>,
+      },
+      {
+        title: "Task Management",
+        href: "/dashboard/admin/TaskManagement",
+        icon: <span className="h-4 w-4">⚙️</span>,
+      },
+      {
+        title: "Analytics",
+        href: "/dashboard/admin/analytics",
+        icon: <span className="h-4 w-4">📈</span>,
+      },
+    ],
+    employee: [
+      {
+        title: "Dashboard",
+        href: "/dashboard/employee",
+        icon: <span className="h-4 w-4">📊</span>,
+      },
+      {
+        title: "Upload Content",
+        href: "/dashboard/employee/upload",
+        icon: <span className="h-4 w-4">📤</span>,
+      },
+      {
+        title: "Manage Courses",
+        href: "/dashboard/employee/courses",
+        icon: <span className="h-4 w-4">📚</span>,
+      },
+      {
+        title: "Analytics",
+        href: "/dashboard/employee/analytics",
+        icon: <span className="h-4 w-4">📈</span>,
+      },
+    ],
+    owner: [
+      {
+        title: "Dashboard",
+        href: "/dashboard/owner",
+        icon: <span className="h-4 w-4">📊</span>,
+      },
+      {
+        title: "Revenue",
+        href: "/dashboard/owner/revenue",
+        icon: <span className="h-4 w-4">💰</span>,
+      },
+      {
+        title: "Users",
+        href: "/dashboard/owner/users",
+        icon: <span className="h-4 w-4">👥</span>,
+      },
+      {
+        title: "Analytics",
+        href: "/dashboard/owner/analytics",
+        icon: <span className="h-4 w-4">📈</span>,
+      },
+    ],
+  };
+
+  const navItems = roleBasedNavItems[role] || roleBasedNavItems.student;
 
   return (
     <>
@@ -122,8 +239,12 @@ export function Sidebar() {
                 <span className="text-sm font-medium">JS</span>
               </div>
               <div>
-                <p className="text-sm font-medium">John Student</p>
-                <p className="text-xs text-muted-foreground">Student</p>
+                <p className="text-sm font-medium">
+                  John {role.charAt(0).toUpperCase() + role.slice(1)}
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  {role.charAt(0).toUpperCase() + role.slice(1)}
+                </p>
               </div>
             </div>
           </div>

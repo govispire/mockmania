@@ -70,6 +70,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "tempo-devtools": "^2.0.69"
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "tempo-devtools": "^2.0.94"
   }
 }

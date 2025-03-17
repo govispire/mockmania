@@ -14,7 +14,7 @@ export function DashboardLayout({
   return (
     <div className="flex min-h-screen w-full">
       {/* Sidebar */}
-      <Sidebar />
+      <Sidebar role={role} />
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col md:pl-64">
@@ -35,7 +35,6 @@ export function DashboardLayout({
         {/* Page Content */}
         <main className="flex-1 overflow-y-auto bg-background">
           <div className="py-6 pt-20 md:pt-6">
-            {" "}
             {/* Added padding-top for mobile to account for search bar */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
               {children}

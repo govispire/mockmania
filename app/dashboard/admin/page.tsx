@@ -1,6 +1,5 @@
 "use client";
 
-import { DashboardLayout } from "@/components/layouts/MainLayout";
 import { DashboardStats } from "@/components/common/DashboardStats";
 import { PerformanceChart } from "@/components/common/PerformanceChart";
 import { Users, BookOpen, FileCheck, Activity } from "lucide-react";
@@ -40,48 +39,46 @@ const mockUserData = [
 
 export default function AdminDashboard() {
   return (
-    <DashboardLayout role="admin">
-      <div className="space-y-6">
-        <div>
-          <h1 className="text-3xl font-bold">Admin Dashboard</h1>
-          <p className="text-muted-foreground">Manage users and content</p>
-        </div>
-
-        <DashboardStats stats={mockStats} />
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <PerformanceChart data={mockUserData} title="User Growth" />
-
-          <Card className="p-6">
-            <h3 className="font-semibold mb-4">Pending Approvals</h3>
-            <div className="space-y-4">
-              {[1, 2, 3].map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center justify-between border-b pb-4"
-                >
-                  <div>
-                    <p className="font-medium">
-                      New Course: Advanced Mathematics
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Submitted by John Doe
-                    </p>
-                  </div>
-                  <div className="flex gap-2">
-                    <Button size="sm" variant="default">
-                      Approve
-                    </Button>
-                    <Button size="sm" variant="destructive">
-                      Reject
-                    </Button>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Card>
-        </div>
+    <div className="space-y-6">
+      <div>
+        <h1 className="text-3xl font-bold">Admin Dashboard</h1>
+        <p className="text-muted-foreground">Manage users and content</p>
       </div>
-    </DashboardLayout>
+
+      <DashboardStats stats={mockStats} />
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <PerformanceChart data={mockUserData} title="User Growth" />
+
+        <Card className="p-6">
+          <h3 className="font-semibold mb-4">Pending Approvals</h3>
+          <div className="space-y-4">
+            {[1, 2, 3].map((item) => (
+              <div
+                key={item}
+                className="flex items-center justify-between border-b pb-4"
+              >
+                <div>
+                  <p className="font-medium">
+                    New Course: Advanced Mathematics
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Submitted by John Doe
+                  </p>
+                </div>
+                <div className="flex gap-2">
+                  <Button size="sm" variant="default">
+                    Approve
+                  </Button>
+                  <Button size="sm" variant="destructive">
+                    Reject
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Card>
+      </div>
+    </div>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { Sidebar } from "@/components/layouts/Sidebar";
-import { Bell, User } from "lucide-react";
+import { Bell, User, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function DashboardLayout({
@@ -12,33 +12,43 @@ export function DashboardLayout({
   role?: "student" | "admin" | "employee" | "owner";
 }) {
   return (
-    <div className="flex min-h-screen w-full">
-      {/* Sidebar */}
-      <Sidebar role={role} />
+    <div className="flex min-h-screen w-full bg-background overflow-hidden">
+      {/* Sidebar - fixed width */}
+      <div className="fixed inset-y-0 left-0 w-64 z-30 hidden md:block">
+        <Sidebar role={role} />
+      </div>
 
-      {/* Main Content */}
-      <div className="flex-1 flex flex-col md:pl-64">
-        {/* Top Navigation */}
-        <header className="bg-card border-b">
+      {/* Mobile sidebar */}
+      <div className="md:hidden">
+        <Sidebar role={role} />
+      </div>
+
+      {/* Main Content - expands to fill remaining space */}
+      <div className="flex-1 flex flex-col md:ml-64 w-full">
+        {/* Top Navigation - fixed at top */}
+        <header className="fixed top-0 right-0 left-0 md:left-64 z-20 bg-card border-b">
           <div className="flex items-center justify-between h-16 px-4">
-            <div className="flex-1 flex justify-end space-x-4">
+            <div className="hidden md:flex items-center">
+              <h1 className="text-xl font-bold">Moct Platform</h1>
+            </div>
+            <div className="flex items-center space-x-4 ml-auto">
               <Button variant="ghost" size="icon">
                 <Bell className="w-5 h-5" />
               </Button>
-              <Button variant="ghost" size="icon">
-                <User className="w-5 h-5" />
-              </Button>
+              <div className="flex items-center gap-2 border rounded-full px-3 py-1">
+                <User className="w-5 h-5 text-primary" />
+                <span className="text-sm font-medium hidden md:inline-block">
+                  {role.charAt(0).toUpperCase() + role.slice(1)}
+                </span>
+              </div>
             </div>
           </div>
         </header>
 
-        {/* Page Content */}
-        <main className="flex-1 overflow-y-auto bg-background">
-          <div className="py-6 pt-20 md:pt-6">
-            {/* Added padding-top for mobile to account for search bar */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-              {children}
-            </div>
+        {/* Page Content - scrollable area with proper padding */}
+        <main className="flex-1 overflow-x-hidden overflow-y-auto bg-background pt-16 w-full">
+          <div className="py-6 w-full">
+            <div className="w-full px-4 sm:px-6 md:px-8">{children}</div>
           </div>
         </main>
       </div>

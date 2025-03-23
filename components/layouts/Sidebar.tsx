@@ -2,21 +2,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import {
-  Menu,
-  Search,
-  LayoutDashboard,
-  BookOpen,
-  FileText,
-  Calendar,
-  TrendingUp,
-  FileUp,
-  Globe,
-  Zap,
-  Users,
-  Settings,
-  Database,
-} from "lucide-react";
+import { Menu, Search, LogOut, Settings } from "lucide-react";
 
 type NavItem = {
   title: string;
@@ -177,7 +163,7 @@ export function Sidebar({
   return (
     <>
       {/* Mobile menu button */}
-      <div className="fixed top-0 left-0 z-40 flex h-16 items-center gap-2 border-b bg-background px-4 md:hidden">
+      <div className="fixed top-0 left-0 z-50 flex h-16 items-center gap-2 border-b bg-background px-4 md:hidden">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="inline-flex h-10 w-10 items-center justify-center rounded-md hover:bg-accent"
@@ -188,7 +174,7 @@ export function Sidebar({
       </div>
 
       {/* Search (mobile) */}
-      <div className="fixed top-16 left-0 right-0 z-30 border-b bg-background px-4 py-2 md:hidden">
+      <div className="fixed top-16 left-0 right-0 z-40 border-b bg-background px-4 py-2 md:hidden">
         <div className="relative">
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
           <input
@@ -202,7 +188,7 @@ export function Sidebar({
       {/* Sidebar */}
       <div
         className={cn(
-          "fixed inset-y-0 left-0 z-30 w-64 bg-background border-r transform transition-transform duration-200 ease-in-out md:translate-x-0",
+          "fixed inset-y-0 left-0 z-40 w-64 bg-background border-r transform transition-transform duration-200 ease-in-out md:translate-x-0",
           isOpen ? "translate-x-0" : "-translate-x-full",
         )}
       >
@@ -234,18 +220,21 @@ export function Sidebar({
           </nav>
 
           <div className="p-4 border-t">
-            <div className="flex items-center gap-3 px-3 py-2">
-              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                <span className="text-sm font-medium">JS</span>
-              </div>
-              <div>
-                <p className="text-sm font-medium">
-                  John {role.charAt(0).toUpperCase() + role.slice(1)}
-                </p>
-                <p className="text-xs text-muted-foreground">
-                  {role.charAt(0).toUpperCase() + role.slice(1)}
-                </p>
-              </div>
+            <div className="flex flex-col space-y-2">
+              <Link
+                href="/settings"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium hover:bg-accent transition-colors"
+              >
+                <Settings className="h-4 w-4" />
+                <span>Settings</span>
+              </Link>
+              <Link
+                href="/logout"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-destructive hover:bg-destructive/10 transition-colors"
+              >
+                <LogOut className="h-4 w-4" />
+                <span>Logout</span>
+              </Link>
             </div>
           </div>
         </div>
@@ -254,7 +243,7 @@ export function Sidebar({
       {/* Overlay for mobile */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-20 md:hidden"
+          className="fixed inset-0 bg-black/50 z-30 md:hidden"
           onClick={() => setIsOpen(false)}
         />
       )}

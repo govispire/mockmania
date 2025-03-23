@@ -12,9 +12,13 @@ const nextConfig = {
 };
 
 if (process.env.NEXT_PUBLIC_TEMPO) {
-  nextConfig["experimental"] = {
-    // Using compatible SWC plugin version for Next.js 15+
-    swcPlugins: [[require.resolve("tempo-devtools/swc/0.90"), {}]],
+  // Disable SWC minify for Tempo environment
+  nextConfig.swcMinify = false;
+
+  // Use specific version of SWC plugin for Next.js 15
+  nextConfig.experimental = {
+    // Temporarily disable SWC plugins to fix build issues
+    // swcPlugins: [[require.resolve("tempo-devtools/swc/0.90"), {}]],
   };
 }
 

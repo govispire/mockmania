@@ -18,6 +18,8 @@ if (process.env.NEXT_PUBLIC_TEMPO) {
     // Use babel instead of SWC plugins to avoid compatibility issues
     swcPlugins: [],
   };
+  // Force using Babel for Tempo environment
+  nextConfig.transpilePackages = ["@swc/core"];
 }
 
 module.exports = nextConfig;

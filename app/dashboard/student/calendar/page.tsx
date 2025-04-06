@@ -4,7 +4,13 @@ import { useState } from "react";
 import { DashboardLayout } from "@/components/layouts/MainLayout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import { Calendar, List, LayoutGrid, Settings2 } from "lucide-react";
 import { TaskList } from "@/components/calendar/TaskList";
 import { CalendarView } from "@/components/calendar/CalendarView";
@@ -13,11 +19,19 @@ import { AIRecommendations } from "@/components/calendar/AIRecommendations";
 import { StudySchedule } from "@/components/calendar/StudySchedule";
 import { AnalyticsCard } from "@/components/calendar/AnalyticsCard";
 import { Task, AIRecommendation } from "@/types/calendar";
-import { mockTasks, mockEvents, mockAIRecommendations, mockTaskAnalytics, mockStudyAnalytics } from "@/lib/calendar-data";
+import {
+  mockTasks,
+  mockEvents,
+  mockAIRecommendations,
+  mockTaskAnalytics,
+  mockStudyAnalytics,
+} from "@/lib/calendar-data";
 
 export default function CalendarPage() {
   const [tasks, setTasks] = useState<Task[]>(mockTasks);
-  const [recommendations, setRecommendations] = useState<AIRecommendation[]>(mockAIRecommendations);
+  const [recommendations, setRecommendations] = useState<AIRecommendation[]>(
+    mockAIRecommendations,
+  );
   const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
   const [currentTask, setCurrentTask] = useState<Task | undefined>(undefined);
@@ -28,19 +42,21 @@ export default function CalendarPage() {
   };
 
   const handleUpdateTask = (taskId: string, updatedTask: Partial<Task>) => {
-    setTasks(tasks.map(task => 
-      task.id === taskId ? { ...task, ...updatedTask } : task
-    ));
+    setTasks(
+      tasks.map((task) =>
+        task.id === taskId ? { ...task, ...updatedTask } : task,
+      ),
+    );
   };
 
   const handleDeleteTask = (taskId: string) => {
-    setTasks(tasks.filter(task => task.id !== taskId));
+    setTasks(tasks.filter((task) => task.id !== taskId));
   };
 
   const handleToggleComplete = (taskId: string, completed: boolean) => {
-    setTasks(tasks.map(task => 
-      task.id === taskId ? { ...task, completed } : task
-    ));
+    setTasks(
+      tasks.map((task) => (task.id === taskId ? { ...task, completed } : task)),
+    );
   };
 
   const handleAddTaskFromCalendar = (date: Date) => {
@@ -60,34 +76,38 @@ export default function CalendarPage() {
 
   const handleApplyRecommendation = (recommendation: AIRecommendation) => {
     // Mark recommendation as applied
-    setRecommendations(recommendations.map(rec => 
-      rec.id === recommendation.id ? { ...rec, applied: true } : rec
-    ));
+    setRecommendations(
+      recommendations.map((rec) =>
+        rec.id === recommendation.id ? { ...rec, applied: true } : rec,
+      ),
+    );
 
     // If it's a task recommendation, create a new task
-    if (recommendation.recommendationType === 'task') {
+    if (recommendation.recommendationType === "task") {
       const newTask: Task = {
         id: `task-${Date.now()}`,
         title: recommendation.recommendation,
-        subject: 'Mathematics', // Default subject, would be more specific in a real app
+        subject: "Mathematics", // Default subject, would be more specific in a real app
         dueDate: new Date(Date.now() + 24 * 60 * 60 * 1000), // Tomorrow
-        priority: 'medium',
+        priority: "medium",
         duration: 60,
         notes: recommendation.reason,
         completed: false,
         recurring: null,
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 'user1',
+        userId: "user1",
         aiGenerated: true,
       };
-      
+
       setTasks([...tasks, newTask]);
     }
   };
 
   const handleDismissRecommendation = (recommendationId: string) => {
-    setRecommendations(recommendations.filter(rec => rec.id !== recommendationId));
+    setRecommendations(
+      recommendations.filter((rec) => rec.id !== recommendationId),
+    );
   };
 
   const handleAddTaskSubmit = (data: any) => {
@@ -97,7 +117,7 @@ export default function CalendarPage() {
       completed: false,
       createdAt: new Date(),
       updatedAt: new Date(),
-      userId: 'user1',
+      userId: "user1",
     });
     setIsAddDialogOpen(false);
   };
@@ -115,39 +135,50 @@ export default function CalendarPage() {
 
   return (
     <DashboardLayout role="student">
-      <div className="space-y-6">
+      <div className="space-y-6 h-full flex flex-col">
         <div>
           <h1 className="text-3xl font-bold">Study Calendar</h1>
-          <p className="text-muted-foreground">Manage your study schedule and tasks</p>
+          <p className="text-muted-foreground">
+            Manage your study schedule and tasks
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="lg:col-span-2">
-            <Tabs defaultValue="calendar">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-1 min-h-0">
+          <div className="lg:col-span-2 flex flex-col">
+            <Tabs defaultValue="calendar" className="flex flex-col h-full">
               <div className="flex items-center justify-between mb-4">
                 <TabsList>
-                  <TabsTrigger value="calendar" className="flex items-center gap-2">
+                  <TabsTrigger
+                    value="calendar"
+                    className="flex items-center gap-2"
+                  >
                     <Calendar className="h-4 w-4" />
                     Calendar
                   </TabsTrigger>
-                  <TabsTrigger value="tasks" className="flex items-center gap-2">
+                  <TabsTrigger
+                    value="tasks"
+                    className="flex items-center gap-2"
+                  >
                     <List className="h-4 w-4" />
                     Tasks
                   </TabsTrigger>
-                  <TabsTrigger value="analytics" className="flex items-center gap-2">
+                  <TabsTrigger
+                    value="analytics"
+                    className="flex items-center gap-2"
+                  >
                     <LayoutGrid className="h-4 w-4" />
                     Analytics
                   </TabsTrigger>
                 </TabsList>
-                
+
                 <Button variant="outline" size="sm" className="gap-2">
                   <Settings2 className="h-4 w-4" />
                   Preferences
                 </Button>
               </div>
-              
-              <TabsContent value="calendar" className="mt-0">
-                <CalendarView 
+
+              <TabsContent value="calendar" className="mt-0 flex-1 min-h-0">
+                <CalendarView
                   events={mockEvents}
                   tasks={tasks}
                   onAddTask={handleAddTaskFromCalendar}
@@ -156,9 +187,9 @@ export default function CalendarPage() {
                   onToggleComplete={handleToggleComplete}
                 />
               </TabsContent>
-              
-              <TabsContent value="tasks" className="mt-0">
-                <TaskList 
+
+              <TabsContent value="tasks" className="mt-0 flex-1 min-h-0">
+                <TaskList
                   tasks={tasks}
                   onAddTask={handleAddTask}
                   onUpdateTask={handleUpdateTask}
@@ -166,31 +197,28 @@ export default function CalendarPage() {
                   onToggleComplete={handleToggleComplete}
                 />
               </TabsContent>
-              
-              <TabsContent value="analytics" className="mt-0">
-                <AnalyticsCard 
+
+              <TabsContent value="analytics" className="mt-0 flex-1 min-h-0">
+                <AnalyticsCard
                   taskAnalytics={mockTaskAnalytics}
                   studyAnalytics={mockStudyAnalytics}
                 />
               </TabsContent>
             </Tabs>
           </div>
-          
-          <div className="space-y-6">
-            <AIRecommendations 
+
+          <div className="space-y-6 flex flex-col">
+            <AIRecommendations
               recommendations={recommendations}
               onApplyRecommendation={handleApplyRecommendation}
               onDismissRecommendation={handleDismissRecommendation}
             />
-            
-            <StudySchedule 
-              tasks={tasks}
-              onViewTask={handleViewTask}
-            />
+
+            <StudySchedule tasks={tasks} onViewTask={handleViewTask} />
           </div>
         </div>
       </div>
-      
+
       <Dialog open={isAddDialogOpen} onOpenChange={setIsAddDialogOpen}>
         <DialogContent className="sm:max-w-[600px]">
           <DialogHeader>
@@ -205,7 +233,7 @@ export default function CalendarPage() {
           />
         </DialogContent>
       </Dialog>
-      
+
       <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
         <DialogContent className="sm:max-w-[600px]">
           <DialogHeader>

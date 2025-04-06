@@ -47,8 +47,8 @@ export function DashboardLayout({
 
         {/* Page Content - scrollable area with proper padding */}
         <main className="flex-1 overflow-x-hidden overflow-y-auto bg-background pt-16 w-full">
-          <div className="py-6 w-full">
-            <div className="w-full px-4 sm:px-6 md:px-8">{children}</div>
+          <div className="py-6 w-full h-[calc(100vh-4rem)]">
+            <div className="w-full h-full px-4 sm:px-6 md:px-8">{children}</div>
           </div>
         </main>
       </div>

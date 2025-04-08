@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -25,7 +24,7 @@ const ownerNavItems = [
   },
   {
     title: "Performance Analysis",
-    href: "/dashboard/owner/Performance Analysis",
+    href: "/dashboard/owner/performance-analysis",
     icon: <span className="h-4 w-4">📈</span>,
   },
   {
@@ -35,7 +34,7 @@ const ownerNavItems = [
   },
   {
     title: "Revenue Breakdown",
-    href: "/dashboard/owner/Revenue Breakdown",
+    href: "/dashboard/owner/revenue-breakdown",
     icon: <span className="h-4 w-4">💵</span>,
   },
   {
@@ -45,7 +44,7 @@ const ownerNavItems = [
   },
   {
     title: "Sales Performance",
-    href: "/dashboard/owner/Sales Performance",
+    href: "/dashboard/owner/sales-performance",
     icon: <span className="h-4 w-4">📊</span>,
   },
   {
@@ -65,7 +64,7 @@ const ownerNavItems = [
   },
   {
     title: "Website Performance",
-    href: "/dashboard/owner/Website Performance",
+    href: "/dashboard/owner/website-performance",
     icon: <span className="h-4 w-4">🌐</span>,
   },
 ];

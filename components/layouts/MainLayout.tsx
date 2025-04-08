@@ -20,10 +20,10 @@ export function DashboardLayout({
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col w-full md:pl-64">
+      <div className="flex-1 flex flex-col w-full lg:pl-64">
         {/* Top Navigation */}
         <header className="sticky top-0 z-20 bg-card border-b">
-          <div className="flex items-center justify-between h-16 px-4 md:px-6">
+          <div className="flex items-center justify-between h-16 px-4">
             <div className="flex items-center space-x-4">
               <button className="md:hidden p-2 hover:bg-accent rounded-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -48,8 +48,8 @@ export function DashboardLayout({
 
         {/* Page Content */}
         <main className="flex-1 overflow-x-hidden overflow-y-auto bg-background">
-          <div className="py-4 md:py-6 min-h-[calc(100vh-4rem)]">
-            <div className="px-3 md:px-6 max-w-7xl mx-auto">{children}</div>
+          <div className="p-4 min-h-[calc(100vh-4rem)]">
+            <div className="max-w-7xl mx-auto">{children}</div>
           </div>
         </main>
       </div>

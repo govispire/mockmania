@@ -1,4 +1,3 @@
-
 "use client";
 
 import { DashboardLayout } from "@/components/layouts/MainLayout";
@@ -11,7 +10,7 @@ const marketingPromotionsData = {
       platform: "Email",
       clicks: 1500,
       conversions: 300,
-      revenue: 15000,
+      revenue: 1230000, // ₹12.3L
       roi: 250
     },
     {
@@ -19,7 +18,7 @@ const marketingPromotionsData = {
       platform: "Social",
       clicks: 2000,
       conversions: 450,
-      revenue: 22500,
+      revenue: 1850000, // ₹18.5L
       roi: 300
     }
   ],
@@ -46,8 +45,8 @@ const marketingPromotionsData = {
   courseFees: [
     {
       course: "Banking Foundation",
-      regularPrice: "$199",
-      salePrice: "$159",
+      regularPrice: "₹16,400",
+      salePrice: "₹13,100",
       category: "Banking"
     }
   ]

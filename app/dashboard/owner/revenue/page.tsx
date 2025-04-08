@@ -6,15 +6,15 @@ import { RevenueBreakdown } from "@/components/owner/RevenueBreakdown";
 
 const revenueBreakdownData = {
   earnings: {
-    courses: 75000,
-    testSeries: 15000,
-    subscriptions: 35000,
+    courses: 6150000, // ₹61.5L
+    testSeries: 1230000, // ₹12.3L
+    subscriptions: 2870000, // ₹28.7L
   },
   transactions: [
     {
       id: "TRX-001",
       user: "John Doe",
-      amount: "$299.00",
+      amount: "₹24,900",
       type: "Course Purchase",
       date: "2024-01-15",
       status: "Completed"
@@ -22,7 +22,7 @@ const revenueBreakdownData = {
     {
       id: "TRX-002",
       user: "Jane Smith",
-      amount: "$149.00",
+      amount: "₹12,400",
       type: "Test Series",
       date: "2024-01-14",
       status: "Pending"
@@ -32,19 +32,19 @@ const revenueBreakdownData = {
     {
       plan: "Basic",
       activeUsers: 1245,
-      revenue: "$12,450"
+      revenue: "₹10,24,500"
     },
     {
       plan: "Premium",
       activeUsers: 845,
-      revenue: "$25,350"
+      revenue: "₹20,85,000"
     }
   ],
   payouts: [
     {
       id: "PAY-001",
       recipient: "Instructor A",
-      amount: "$1,200",
+      amount: "₹98,800",
       status: "Completed",
       date: "2024-01-10"
     }

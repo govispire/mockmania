@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Card } from "@/components/ui/card";
@@ -441,3 +442,10 @@ export function SettingsManagement() {
                   <Button variant="outline">Upload New Logo</Button>
                 </div>
               </div>
+            </div>
+          </Card>
+        </TabsContent>
+      </Tabs>
+    </div>
+  );
+}

@@ -37,6 +37,11 @@ const ownerNavItems = [
     href: "/dashboard/owner/user-behavior",
     icon: <span className="h-4 w-4">📊</span>,
   },
+  {
+    title: "Settings & Management",
+    href: "/dashboard/owner/settings",
+    icon: <span className="h-4 w-4">⚙️</span>,
+  },
 ];
 
 export function OwnerSidebar() {

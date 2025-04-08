@@ -1,3 +1,4 @@
+
 "use client";
 
 import dynamic from 'next/dynamic';
@@ -7,15 +8,6 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
-
-// Disable SSR for faster client-side rendering
-const RegisterPage = dynamic(() => Promise.resolve(RegisterComponent), {
-  ssr: false,
-});
-
-function RegisterComponent() {
-
-export default RegisterPage;
 
 function RegisterComponent() {
   const router = useRouter();
@@ -104,3 +96,10 @@ function RegisterComponent() {
     </div>
   );
 }
+
+// Disable SSR for faster client-side rendering
+const RegisterPage = dynamic(() => Promise.resolve(RegisterComponent), {
+  ssr: false,
+});
+
+export default RegisterPage;

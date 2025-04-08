@@ -1,68 +1,29 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
 import { MarketingPromotions } from "@/components/owner/MarketingPromotions";
+import { DashboardLayout } from "@/components/layouts/MainLayout";
 
-const marketingPromotionsData = {
-  activePromotions: 8,
-  totalCampaigns: 25,
-  emailStats: {
-    sent: 5000,
-    opened: 3200,
-    clicked: 1500,
-  },
-  conversionRate: 12.5,
-  campaignPerformance: [
-    {
-      name: "Summer Sale",
-      impressions: 15000,
-      clicks: 4500,
-      conversions: 750,
-    },
-    {
-      name: "Back to School",
-      impressions: 12000,
-      clicks: 3800,
-      conversions: 620,
-    },
-    {
-      name: "Holiday Special",
-      impressions: 18000,
-      clicks: 5200,
-      conversions: 890,
-    },
-  ],
-  channelDistribution: [
-    { name: "Email", value: 45, color: "#0088FE" },
-    { name: "Social", value: 30, color: "#00C49F" },
-    { name: "Display", value: 15, color: "#FFBB28" },
-    { name: "Other", value: 10, color: "#FF8042" },
-  ],
-  upcomingCampaigns: [
-    {
-      id: "1",
-      name: "Winter Sale",
-      type: "Discount",
-      startDate: "2024-01-15",
-      status: "scheduled",
-    },
-    {
-      id: "2",
-      name: "New Course Launch",
-      type: "Product",
-      startDate: "2024-01-20",
-      status: "draft",
-    },
-    {
-      id: "3",
-      name: "Flash Sale",
-      type: "Promotion",
-      startDate: "2024-01-10",
-      status: "active",
-    },
-  ],
+const marketingData = {
+  activePromotions: 5,
+  totalBudget: 50000,
+  spentBudget: 35000,
+  campaigns: [
+    { name: "Early Bird Offer", status: "active", conversion: 15.2 },
+    { name: "Referral Program", status: "active", conversion: 22.8 },
+    { name: "Holiday Special", status: "scheduled", conversion: 0 }
+  ]
 };
 
-export default function MarketingPromotionPage() {
-  return <MarketingPromotions data={marketingPromotionsData} />;
+export default function MarketingPromotionsPage() {
+  return (
+    <DashboardLayout role="owner">
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-3xl font-bold">Marketing Promotions</h1>
+          <p className="text-muted-foreground">Track and manage marketing campaigns</p>
+        </div>
+        <MarketingPromotions data={marketingData} />
+      </div>
+    </DashboardLayout>
+  );
 }

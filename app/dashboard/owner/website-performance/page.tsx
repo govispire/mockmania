@@ -1,59 +1,39 @@
 "use client";
 
 import { WebsitePerformance } from "@/components/owner/WebsitePerformance";
+import { DashboardLayout } from "@/components/layouts/MainLayout";
 
 const websitePerformanceData = {
-  activeUsers: 250,
+  activeUsers: 1250,
   loadSpeed: {
-    current: 2.5,
-    target: 1.5,
+    current: 2.1,
+    target: 1.5
   },
   uptime: 99.8,
   errors: [
-    {
-      type: "404 Not Found",
-      count: 23,
-      priority: "low"
-    },
-    {
-      type: "Server Error",
-      count: 5,
-      priority: "high"
-    }
+    { type: "404 Not Found", count: 23, priority: "low" },
+    { type: "500 Server Error", count: 5, priority: "high" },
+    { type: "403 Forbidden", count: 12, priority: "medium" }
   ],
   databasePerformance: [
-    {
-      time: "00:00",
-      queries: 150,
-      responseTime: 250
-    },
-    {
-      time: "06:00",
-      queries: 280,
-      responseTime: 320
-    },
-    {
-      time: "12:00",
-      queries: 450,
-      responseTime: 380
-    },
-    {
-      time: "18:00",
-      queries: 380,
-      responseTime: 290
-    }
+    { time: "00:00", queries: 150, responseTime: 120 },
+    { time: "06:00", queries: 280, responseTime: 150 },
+    { time: "12:00", queries: 420, responseTime: 180 },
+    { time: "18:00", queries: 310, responseTime: 140 }
   ]
 };
 
 export default function WebsitePerformancePage() {
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold">Website Performance</h1>
-        <p className="text-muted-foreground">Monitor website metrics and performance</p>
+    <DashboardLayout role="owner">
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-3xl font-bold">Website Performance</h1>
+          <p className="text-muted-foreground">Monitor website metrics and performance</p>
+        </div>
+        <WebsitePerformance data={websitePerformanceData} />
       </div>
-      <WebsitePerformance data={websitePerformanceData} />
-    </div>
+    </DashboardLayout>
   );
 }
 

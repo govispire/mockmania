@@ -25,7 +25,7 @@ const ownerNavItems = [
   },
   {
     title: "Performance Analysis",
-    href: "/dashboard/owner/performance-analysis",
+    href: "/dashboard/owner/Performance Analysis",
     icon: <span className="h-4 w-4">📈</span>,
   },
   {
@@ -35,7 +35,7 @@ const ownerNavItems = [
   },
   {
     title: "Revenue Breakdown",
-    href: "/dashboard/owner/revenue-breakdown",
+    href: "/dashboard/owner/Revenue Breakdown",
     icon: <span className="h-4 w-4">💵</span>,
   },
   {
@@ -45,7 +45,7 @@ const ownerNavItems = [
   },
   {
     title: "Sales Performance",
-    href: "/dashboard/owner/sales-performance",
+    href: "/dashboard/owner/Sales Performance",
     icon: <span className="h-4 w-4">📊</span>,
   },
   {
@@ -65,7 +65,7 @@ const ownerNavItems = [
   },
   {
     title: "Website Performance",
-    href: "/dashboard/owner/website-performance",
+    href: "/dashboard/owner/Website Performance",
     icon: <span className="h-4 w-4">🌐</span>,
   },
 ];

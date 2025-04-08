@@ -1,4 +1,3 @@
-
 "use client";
 
 import { MarketingPromotions } from "@/components/owner/MarketingPromotions";

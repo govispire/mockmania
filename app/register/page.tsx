@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
@@ -7,7 +8,16 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
 
-export default function RegisterPage() {
+// Disable SSR for faster client-side rendering
+const RegisterPage = dynamic(() => Promise.resolve(RegisterComponent), {
+  ssr: false,
+});
+
+function RegisterComponent() {
+
+export default RegisterPage;
+
+function RegisterComponent() {
   const router = useRouter();
   const [formData, setFormData] = useState({
     fullName: '',

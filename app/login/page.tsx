@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -7,7 +8,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 
-export default function LoginPage() {
+// Disable SSR for faster client-side rendering
+const LoginPage = dynamic(() => Promise.resolve(LoginComponent), {
+  ssr: false,
+});
+
+function LoginComponent() {
+
+export default LoginPage;
+
+function LoginComponent() {
   const router = useRouter();
   const [showRoles, setShowRoles] = useState(false);
   const [loginData, setLoginData] = useState({

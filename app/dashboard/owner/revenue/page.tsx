@@ -1,6 +1,7 @@
 
 "use client";
 
+import { DashboardLayout } from "@/components/layouts/MainLayout";
 import { RevenueBreakdown } from "@/components/owner/RevenueBreakdown";
 
 const revenueBreakdownData = {
@@ -52,12 +53,14 @@ const revenueBreakdownData = {
 
 export default function RevenuePage() {
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold">Revenue Overview</h1>
-        <p className="text-muted-foreground">Monitor your platform's financial performance</p>
+    <DashboardLayout role="owner">
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-3xl font-bold">Revenue Overview</h1>
+          <p className="text-muted-foreground">Monitor your platform's financial performance</p>
+        </div>
+        <RevenueBreakdown data={revenueBreakdownData} />
       </div>
-      <RevenueBreakdown data={revenueBreakdownData} />
-    </div>
+    </DashboardLayout>
   );
 }

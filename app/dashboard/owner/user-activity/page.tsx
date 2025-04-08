@@ -161,8 +161,14 @@ const userData = {
 
 export default function UserActivityPage() {
   return (
-    <DashboardLayout>
-      <UserActivity data={userData} />
+    <DashboardLayout role="owner">
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-3xl font-bold">User Activity</h1>
+          <p className="text-muted-foreground">Monitor user engagement and activity</p>
+        </div>
+        <UserActivity data={userData} />
+      </div>
     </DashboardLayout>
   );
 }

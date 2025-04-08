@@ -75,9 +75,13 @@
 @layer base {
   * {
     @apply border-border;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
   body {
     @apply bg-background text-foreground antialiased;
+    overflow-x: hidden;
   }
   html {
     @apply overflow-x-hidden scroll-smooth;

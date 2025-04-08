@@ -1,7 +1,7 @@
 "use client";
 
 import { DashboardLayout } from "@/components/layouts/MainLayout";
-import { WebsitePerformance } from "../WebsitePerformance";
+import { WebsitePerformance } from "@/components/owner/WebsitePerformance";
 
 // Mock data for WebsitePerformance component
 const websitePerformanceData = {
@@ -38,7 +38,7 @@ const websitePerformanceData = {
   ],
 };
 
-export default function WebsitePerformancePage() {
+export default function WebsitePage() {
   return (
     <DashboardLayout role="owner">
       <div className="space-y-6">
@@ -48,7 +48,6 @@ export default function WebsitePerformancePage() {
             Monitor website metrics, errors, and database performance
           </p>
         </div>
-
         <WebsitePerformance data={websitePerformanceData} />
       </div>
     </DashboardLayout>

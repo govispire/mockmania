@@ -1,7 +1,6 @@
 "use client";
 
-import { DashboardLayout } from "@/components/layouts/MainLayout";
-import { SalesPerformance } from "../SalesPerformance";
+import { SalesPerformance } from "@/components/owner/SalesPerformance";
 
 // Mock data for SalesPerformance component
 const salesPerformanceData = {
@@ -16,17 +15,14 @@ const salesPerformanceData = {
 
 export default function SalesPage() {
   return (
-    <DashboardLayout role="owner">
-      <div className="space-y-6">
-        <div>
-          <h1 className="text-3xl font-bold">Sales Performance</h1>
-          <p className="text-muted-foreground">
-            Track sales metrics and top performing products
-          </p>
-        </div>
-
-        <SalesPerformance data={salesPerformanceData} />
+    <div className="space-y-6">
+      <div>
+        <h1 className="text-3xl font-bold">Sales Performance</h1>
+        <p className="text-muted-foreground">
+          Track sales metrics and top performing products
+        </p>
       </div>
-    </DashboardLayout>
+      <SalesPerformance data={salesPerformanceData} />
+    </div>
   );
 }

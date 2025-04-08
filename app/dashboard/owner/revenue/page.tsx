@@ -1,7 +1,7 @@
 "use client";
 
 import { DashboardLayout } from "@/components/layouts/MainLayout";
-import { RevenueBreakdown } from "../RevenueBreakdown";
+import { RevenueBreakdown } from "@/components/owner/RevenueBreakdown";
 
 // Mock data for RevenueBreakdown component
 const revenueBreakdownData = {

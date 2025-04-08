@@ -1,7 +1,7 @@
 "use client";
 
 import { DashboardLayout } from "@/components/layouts/MainLayout";
-import { MarketingPromotions } from "../MarketingPromotions";
+import { MarketingPromotions } from "@/components/owner/MarketingPromotions";
 
 // Mock data for MarketingPromotions component
 const marketingPromotionsData = {
@@ -78,7 +78,7 @@ const marketingPromotionsData = {
   ],
 };
 
-export default function MarketingPromotionsPage() {
+export default function MarketingPage() {
   return (
     <DashboardLayout role="owner">
       <div className="space-y-6">

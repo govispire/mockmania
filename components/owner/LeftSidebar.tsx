@@ -18,14 +18,39 @@ const ownerNavItems = [
     icon: <span className="h-4 w-4">📢</span>,
   },
   {
+    title: "Marketing Promotions",
+    href: "/dashboard/owner/marketing-promotion",
+    icon: <span className="h-4 w-4">🎯</span>,
+  },
+  {
+    title: "Performance Analysis",
+    href: "/dashboard/owner/performance-analysis",
+    icon: <span className="h-4 w-4">📈</span>,
+  },
+  {
     title: "Revenue",
     href: "/dashboard/owner/revenue",
     icon: <span className="h-4 w-4">💰</span>,
   },
   {
+    title: "Revenue Breakdown",
+    href: "/dashboard/owner/revenue-breakdown",
+    icon: <span className="h-4 w-4">💵</span>,
+  },
+  {
     title: "Sales",
     href: "/dashboard/owner/sales",
     icon: <span className="h-4 w-4">💹</span>,
+  },
+  {
+    title: "Sales Performance",
+    href: "/dashboard/owner/sales-performance",
+    icon: <span className="h-4 w-4">📊</span>,
+  },
+  {
+    title: "Settings Management",
+    href: "/dashboard/owner/settings",
+    icon: <span className="h-4 w-4">⚙️</span>,
   },
   {
     title: "User Activity",
@@ -35,12 +60,12 @@ const ownerNavItems = [
   {
     title: "User Behavior",
     href: "/dashboard/owner/user-behavior",
-    icon: <span className="h-4 w-4">📊</span>,
+    icon: <span className="h-4 w-4">👤</span>,
   },
   {
-    title: "Settings & Management",
-    href: "/dashboard/owner/settings",
-    icon: <span className="h-4 w-4">⚙️</span>,
+    title: "Website Performance",
+    href: "/dashboard/owner/website",
+    icon: <span className="h-4 w-4">🌐</span>,
   },
 ];
 

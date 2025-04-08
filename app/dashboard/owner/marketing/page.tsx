@@ -55,8 +55,14 @@ const marketingPromotionsData = {
 
 export default function MarketingPage() {
   return (
-    <DashboardLayout>
-      <MarketingPromotions data={marketingPromotionsData} />
+    <DashboardLayout role="owner">
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-3xl font-bold">Marketing</h1>
+          <p className="text-muted-foreground">Manage your marketing campaigns and promotions</p>
+        </div>
+        <MarketingPromotions data={marketingPromotionsData} />
+      </div>
     </DashboardLayout>
   );
 }

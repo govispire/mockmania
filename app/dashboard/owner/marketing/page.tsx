@@ -52,12 +52,12 @@ const marketingPromotionsData = {
   ]
 };
 
-export default function MarketingPage() {
+export default function MarketingPromotionsPage() { //Renamed the page
   return (
     <DashboardLayout role="owner">
       <div className="space-y-6">
         <div>
-          <h1 className="text-3xl font-bold">Marketing</h1>
+          <h1 className="text-3xl font-bold">Marketing Promotions</h1> {/*Renamed the heading*/}
           <p className="text-muted-foreground">Manage your marketing campaigns and promotions</p>
         </div>
         <MarketingPromotions data={marketingPromotionsData} />

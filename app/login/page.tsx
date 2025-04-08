@@ -1,3 +1,4 @@
+
 "use client";
 
 import dynamic from "next/dynamic";
@@ -7,15 +8,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
-
-// Disable SSR for faster client-side rendering
-const LoginPage = dynamic(() => Promise.resolve(LoginComponent), {
-  ssr: false,
-});
-
-function LoginComponent() {
-
-export default LoginPage;
 
 function LoginComponent() {
   const router = useRouter();
@@ -147,3 +139,10 @@ function LoginComponent() {
     </div>
   );
 }
+
+// Disable SSR for faster client-side rendering
+const LoginPage = dynamic(() => Promise.resolve(LoginComponent), {
+  ssr: false,
+});
+
+export default LoginPage;

@@ -1,9 +1,10 @@
 
 "use client";
 
+import { DashboardLayout } from "@/components/layouts/MainLayout";
 import { SalesPerformance } from "@/components/owner/SalesPerformance";
 
-const salesPerformanceData = {
+const salesData = {
   todaySales: 2345,
   weeklySales: 12456,
   monthlySales: 45678,
@@ -15,8 +16,21 @@ const salesPerformanceData = {
     day: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'][i],
     sales: Math.floor(Math.random() * 1000) + 500,
   })),
+  recentTransactions: [
+    {
+      id: "1",
+      course: "SBI PO Course",
+      amount: 1999,
+      date: "2024-01-15",
+      status: "completed"
+    }
+  ]
 };
 
 export default function SalesPage() {
-  return <SalesPerformance data={salesPerformanceData} />;
+  return (
+    <DashboardLayout>
+      <SalesPerformance data={salesData} />
+    </DashboardLayout>
+  );
 }

@@ -1,5 +1,7 @@
 "use client";
 
+import { DashboardLayout } from "@/components/layouts/MainLayout";
+import { UserActivity } from "@/components/owner/UserActivity";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
@@ -137,5 +139,30 @@ export function UserActivity({ data }: UserActivityProps) {
         </Card>
       </div>
     </div>
+  );
+}
+
+
+const userData = {
+  currentActiveUsers: 245,
+  totalLoggedInUsers: {
+    daily: 1200,
+    weekly: 5600,
+    monthly: 18000
+  },
+  purchasedUsers: 850,
+  nonPurchasedUsers: 350,
+  userEngagement: [
+    { name: "High", value: 35, color: "#0088FE" },
+    { name: "Medium", value: 45, color: "#00C49F" },
+    { name: "Low", value: 20, color: "#FFBB28" }
+  ]
+};
+
+export default function UserActivityPage() {
+  return (
+    <DashboardLayout>
+      <UserActivity data={userData} />
+    </DashboardLayout>
   );
 }

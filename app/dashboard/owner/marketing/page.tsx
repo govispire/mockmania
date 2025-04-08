@@ -1,54 +1,62 @@
+
 "use client";
 
+import { DashboardLayout } from "@/components/layouts/MainLayout";
 import { MarketingPromotions } from "@/components/owner/MarketingPromotions";
 
-const marketingData = {
-  activePromotions: 12,
-  totalCampaigns: 45,
-  emailStats: {
-    sent: 10000,
-    opened: 7500,
-    clicked: 3000,
-  },
-  conversionRate: 24.5,
-  campaignPerformance: [
+const marketingPromotionsData = {
+  campaigns: [
     {
       name: "Summer Sale",
-      impressions: 12000,
-      clicks: 3500,
-      conversions: 850,
+      platform: "Email",
+      clicks: 1500,
+      conversions: 300,
+      revenue: 15000,
+      roi: 250
     },
     {
       name: "Back to School",
-      impressions: 15000,
-      clicks: 4200,
-      conversions: 1100,
-    },
+      platform: "Social",
+      clicks: 2000,
+      conversions: 450,
+      revenue: 22500,
+      roi: 300
+    }
   ],
-  channelDistribution: [
-    { name: "Email", value: 45, color: "#0088FE" },
-    { name: "Social", value: 25, color: "#00C49F" },
-    { name: "Display", value: 20, color: "#FFBB28" },
-    { name: "Other", value: 10, color: "#FF8042" },
-  ],
-  upcomingCampaigns: [
+  promotions: [
     {
       id: "1",
-      name: "Flash Sale",
-      type: "Discount",
-      startDate: "2024-02-15",
-      status: "scheduled",
-    },
-    {
-      id: "2",
-      name: "New Course Launch",
-      type: "Promotion",
-      startDate: "2024-02-20",
-      status: "draft",
-    },
+      name: "Early Bird Special",
+      discount: "20% OFF",
+      startDate: "2024-01-01",
+      endDate: "2024-01-31",
+      status: "active",
+      redemptions: 150
+    }
   ],
+  coupons: [
+    {
+      code: "EARLYBIRD20",
+      discount: "20%",
+      usageLimit: 200,
+      used: 150,
+      status: "active"
+    }
+  ],
+  courseFees: [
+    {
+      course: "Banking Foundation",
+      regularPrice: "$199",
+      salePrice: "$159",
+      category: "Banking"
+    }
+  ]
 };
 
 export default function MarketingPage() {
-  return <MarketingPromotions data={marketingData} />;
+  return (
+    <DashboardLayout>
+      <MarketingPromotions data={marketingPromotionsData} />
+    </DashboardLayout>
+  );
 }

@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -48,7 +49,7 @@ const ownerNavItems = [
     icon: <span className="h-4 w-4">📊</span>,
   },
   {
-    title: "Settings Management",
+    title: "Settings",
     href: "/dashboard/owner/settings",
     icon: <span className="h-4 w-4">⚙️</span>,
   },
@@ -64,7 +65,7 @@ const ownerNavItems = [
   },
   {
     title: "Website Performance",
-    href: "/dashboard/owner/website",
+    href: "/dashboard/owner/website-performance",
     icon: <span className="h-4 w-4">🌐</span>,
   },
 ];

@@ -13,19 +13,29 @@ const ownerNavItems = [
     icon: <span className="h-4 w-4">📊</span>,
   },
   {
+    title: "Marketing",
+    href: "/dashboard/owner/marketing",
+    icon: <span className="h-4 w-4">📢</span>,
+  },
+  {
     title: "Revenue",
     href: "/dashboard/owner/revenue",
     icon: <span className="h-4 w-4">💰</span>,
   },
   {
-    title: "Users",
-    href: "/dashboard/owner/users",
+    title: "Sales",
+    href: "/dashboard/owner/sales",
+    icon: <span className="h-4 w-4">💹</span>,
+  },
+  {
+    title: "User Activity",
+    href: "/dashboard/owner/user-activity",
     icon: <span className="h-4 w-4">👥</span>,
   },
   {
-    title: "Analytics",
-    href: "/dashboard/owner/analytics",
-    icon: <span className="h-4 w-4">📈</span>,
+    title: "User Behavior",
+    href: "/dashboard/owner/user-behavior",
+    icon: <span className="h-4 w-4">📊</span>,
   },
 ];
 

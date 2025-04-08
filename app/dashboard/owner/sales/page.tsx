@@ -1,28 +1,22 @@
+
 "use client";
 
 import { SalesPerformance } from "@/components/owner/SalesPerformance";
 
-// Mock data for SalesPerformance component
 const salesPerformanceData = {
-  todaySales: "$2,345",
-  weeklySales: "$12,456",
-  monthlySales: "$45,678",
-  totalSales: "$245,890",
+  todaySales: 2345,
+  weeklySales: 12456,
+  monthlySales: 45678,
+  totalSales: 245890,
   mostActiveProduct: "IBPS Complete Course",
   mostPopularTest: "SBI PO Mock Test Series",
   mostPurchasedCourse: "Banking Foundation Course",
+  salesTrend: Array.from({ length: 7 }, (_, i) => ({
+    day: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'][i],
+    sales: Math.floor(Math.random() * 1000) + 500,
+  })),
 };
 
 export default function SalesPage() {
-  return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold">Sales Performance</h1>
-        <p className="text-muted-foreground">
-          Track sales metrics and top performing products
-        </p>
-      </div>
-      <SalesPerformance data={salesPerformanceData} />
-    </div>
-  );
+  return <SalesPerformance data={salesPerformanceData} />;
 }

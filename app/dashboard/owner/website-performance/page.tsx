@@ -1,5 +1,64 @@
 "use client";
 
+import { WebsitePerformance } from "@/components/owner/WebsitePerformance";
+
+const websitePerformanceData = {
+  activeUsers: 250,
+  loadSpeed: {
+    current: 2.5,
+    target: 1.5,
+  },
+  uptime: 99.8,
+  errors: [
+    {
+      type: "404 Not Found",
+      count: 23,
+      priority: "low"
+    },
+    {
+      type: "Server Error",
+      count: 5,
+      priority: "high"
+    }
+  ],
+  databasePerformance: [
+    {
+      time: "00:00",
+      queries: 150,
+      responseTime: 250
+    },
+    {
+      time: "06:00",
+      queries: 280,
+      responseTime: 320
+    },
+    {
+      time: "12:00",
+      queries: 450,
+      responseTime: 380
+    },
+    {
+      time: "18:00",
+      queries: 380,
+      responseTime: 290
+    }
+  ]
+};
+
+export default function WebsitePerformancePage() {
+  return (
+    <div className="space-y-6">
+      <div>
+        <h1 className="text-3xl font-bold">Website Performance</h1>
+        <p className="text-muted-foreground">Monitor website metrics and performance</p>
+      </div>
+      <WebsitePerformance data={websitePerformanceData} />
+    </div>
+  );
+}
+
+//The following code is preserved from the original file.  It's assumed that the  `WebsitePerformance` component from "@/components/owner/WebsitePerformance" will utilize this.
+
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import {

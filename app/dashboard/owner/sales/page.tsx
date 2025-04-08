@@ -29,8 +29,14 @@ const salesData = {
 
 export default function SalesPage() {
   return (
-    <DashboardLayout>
-      <SalesPerformance data={salesData} />
+    <DashboardLayout role="owner">
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-3xl font-bold">Sales Overview</h1>
+          <p className="text-muted-foreground">Monitor your sales performance and trends</p>
+        </div>
+        <SalesPerformance data={salesData} />
+      </div>
     </DashboardLayout>
   );
 }

@@ -13,32 +13,32 @@ export function DashboardLayout({
   role?: "student" | "admin" | "employee" | "owner";
 }) {
   return (
-    <div className="flex min-h-screen bg-background overflow-hidden">
-      {/* Sidebar - fixed width */}
-      <div className="fixed inset-y-0 left-0 w-64 z-30 hidden md:block">
+    <div className="flex min-h-screen bg-background overflow-x-hidden">
+      {/* Sidebar - fixed width on desktop, drawer on mobile */}
+      <div className="fixed inset-y-0 left-0 w-64 z-30 transform transition-transform duration-200 ease-in-out md:translate-x-0 -translate-x-full md:block">
         {role === "owner" ? <OwnerSidebar /> : <Sidebar role={role} />}
       </div>
 
-      {/* Mobile sidebar */}
-      <div className="md:hidden">
-        {role === "owner" ? <OwnerSidebar /> : <Sidebar role={role} />}
-      </div>
-
-      {/* Main Content - expands to fill remaining space */}
-      <div className="flex-1 flex flex-col md:ml-64">
-        {/* Top Navigation - fixed at top */}
-        <header className="fixed top-0 right-0 left-0 md:left-64 z-20 bg-card border-b">
-          <div className="flex items-center justify-between h-16 px-4">
-            <div className="hidden md:flex items-center">
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col w-full md:ml-64">
+        {/* Top Navigation */}
+        <header className="sticky top-0 z-20 bg-card border-b">
+          <div className="flex items-center justify-between h-16 px-4 md:px-6">
+            <div className="flex items-center space-x-4">
+              <button className="md:hidden p-2 hover:bg-accent rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
               <h1 className="text-xl font-bold">Moct Platform</h1>
             </div>
-            <div className="flex items-center space-x-4 ml-auto">
-              <Button variant="ghost" size="icon">
+            <div className="flex items-center space-x-2 md:space-x-4">
+              <Button variant="ghost" size="icon" className="hidden md:flex">
                 <Bell className="w-5 h-5" />
               </Button>
-              <div className="flex items-center gap-2 border rounded-full px-3 py-1">
+              <div className="flex items-center gap-2 border rounded-full px-2 md:px-3 py-1">
                 <User className="w-5 h-5 text-primary" />
-                <span className="text-sm font-medium hidden md:inline-block">
+                <span className="text-sm font-medium hidden sm:inline-block">
                   {role.charAt(0).toUpperCase() + role.slice(1)}
                 </span>
               </div>
@@ -46,10 +46,10 @@ export function DashboardLayout({
           </div>
         </header>
 
-        {/* Page Content - scrollable area with proper padding */}
-        <main className="flex-1 overflow-x-hidden overflow-y-auto bg-background pt-16">
-          <div className="py-6 h-[calc(100vh-4rem)]">
-            <div className="h-full px-4 sm:px-6 md:px-6">{children}</div>
+        {/* Page Content */}
+        <main className="flex-1 overflow-x-hidden overflow-y-auto bg-background">
+          <div className="py-4 md:py-6 min-h-[calc(100vh-4rem)]">
+            <div className="px-3 md:px-6 max-w-7xl mx-auto">{children}</div>
           </div>
         </main>
       </div>

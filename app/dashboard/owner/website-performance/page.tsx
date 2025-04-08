@@ -4,10 +4,10 @@ import { WebsitePerformance } from "@/components/owner/WebsitePerformance";
 import { DashboardLayout } from "@/components/layouts/MainLayout";
 
 const websitePerformanceData = {
-  activeUsers: 1250,
+  activeUsers: 450,
   loadSpeed: {
-    current: 2.1,
-    target: 1.5
+    current: 1.2,
+    target: 0.8,
   },
   uptime: 99.8,
   errors: [
@@ -16,10 +16,10 @@ const websitePerformanceData = {
     { type: "403 Forbidden", count: 12, priority: "medium" }
   ],
   databasePerformance: [
-    { time: "00:00", queries: 150, responseTime: 120 },
-    { time: "06:00", queries: 280, responseTime: 150 },
-    { time: "12:00", queries: 420, responseTime: 180 },
-    { time: "18:00", queries: 310, responseTime: 140 }
+    { time: "00:00", queries: 150, responseTime: 45 },
+    { time: "06:00", queries: 280, responseTime: 52 },
+    { time: "12:00", queries: 420, responseTime: 63 },
+    { time: "18:00", queries: 390, responseTime: 58 }
   ]
 };
 
@@ -29,15 +29,13 @@ export default function WebsitePerformancePage() {
       <div className="space-y-6">
         <div>
           <h1 className="text-3xl font-bold">Website Performance</h1>
-          <p className="text-muted-foreground">Monitor website metrics and performance</p>
+          <p className="text-muted-foreground">Monitor and analyze website metrics</p>
         </div>
         <WebsitePerformance data={websitePerformanceData} />
       </div>
     </DashboardLayout>
   );
 }
-
-//The following code is preserved from the original file.  It's assumed that the  `WebsitePerformance` component from "@/components/owner/WebsitePerformance" will utilize this.
 
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";

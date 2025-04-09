@@ -1,9 +1,10 @@
 
 "use client";
 
-import { Sidebar } from "./Sidebar";
+import { Sidebar } from "@/components/layouts/Sidebar";
 import { Bell, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { OwnerSidebar } from "@/components/owner/LeftSidebar";
 
 export function DashboardLayout({
   children,
@@ -13,14 +14,14 @@ export function DashboardLayout({
   role?: "student" | "admin" | "employee" | "owner";
 }) {
   return (
-    <div className="h-screen flex overflow-hidden bg-background">
+    <div className="flex min-h-screen bg-background">
       {/* Sidebar */}
-      <div className="hidden md:flex md:w-64 md:flex-col">
-        <Sidebar role={role} />
+      <div className="fixed inset-y-0 left-0 z-30 w-64 transform transition-transform duration-200 ease-in-out -translate-x-full md:translate-x-0">
+        {role === "owner" ? <OwnerSidebar /> : <Sidebar role={role} />}
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col min-h-screen overflow-hidden">
+      <div className="flex-1 flex flex-col min-h-screen w-full md:pl-64">
         {/* Top Navigation */}
         <header className="sticky top-0 z-20 bg-card border-b">
           <div className="flex h-16 items-center justify-between px-4">
@@ -30,7 +31,7 @@ export function DashboardLayout({
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               </button>
-              <h1 className="text-xl font-bold md:hidden">Mock Platform</h1>
+              <h1 className="text-xl font-bold">Moct Platform</h1>
             </div>
             <div className="flex items-center space-x-2 md:space-x-4">
               <Button variant="ghost" size="icon" className="hidden md:flex">
@@ -47,7 +48,7 @@ export function DashboardLayout({
         </header>
 
         {/* Page Content */}
-        <main className="flex-1 overflow-auto bg-background">
+        <main className="flex-1 w-full bg-background">
           <div className="p-4">
             <div className="mx-auto max-w-7xl">
               {children}

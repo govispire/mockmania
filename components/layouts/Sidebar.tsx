@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { Settings, LogOut } from "lucide-react";
+import { Menu, Search, LogOut, Settings } from "lucide-react";
 
 type NavItem = {
   title: string;
@@ -19,6 +20,7 @@ export function Sidebar({
   role?: "student" | "admin" | "employee" | "owner";
 }) {
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
 
   const roleBasedNavItems: RoleBasedNavItems = {
     student: [
@@ -159,50 +161,92 @@ export function Sidebar({
   const navItems = roleBasedNavItems[role] || roleBasedNavItems.student;
 
   return (
-    <div className="flex flex-col h-full bg-background">
-      <div className="flex items-center justify-center h-16 border-b px-4">
+    <>
+      {/* Mobile menu button */}
+      <div className="fixed top-0 left-0 z-50 flex h-16 items-center gap-2 border-b bg-background px-4 md:hidden">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md hover:bg-accent"
+        >
+          <Menu className="h-6 w-6" />
+        </button>
         <h1 className="text-xl font-bold">Moct Platform</h1>
       </div>
 
-      <nav className="flex-1 overflow-y-auto p-4">
-        <ul className="space-y-2">
-          {navItems.map((item) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                className={cn(
-                  "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
-                  pathname === item.href
-                    ? "bg-primary text-primary-foreground"
-                    : "hover:bg-accent"
-                )}
-              >
-                {item.icon}
-                <span>{item.title}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-
-      <div className="p-4 border-t">
-        <div className="flex flex-col space-y-2">
-          <Link
-            href="/settings"
-            className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium hover:bg-accent transition-colors"
-          >
-            <Settings className="h-4 w-4" />
-            <span>Settings</span>
-          </Link>
-          <Link
-            href="/logout"
-            className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-destructive hover:bg-destructive/10 transition-colors"
-          >
-            <LogOut className="h-4 w-4" />
-            <span>Logout</span>
-          </Link>
+      {/* Search (mobile) */}
+      <div className="fixed top-16 left-0 right-0 z-40 border-b bg-background px-4 py-2 md:hidden">
+        <div className="relative">
+          <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+          <input
+            type="search"
+            className="w-full rounded-md border bg-background pl-8 py-2"
+            placeholder="Search..."
+          />
         </div>
       </div>
-    </div>
+
+      {/* Sidebar */}
+      <div
+        className={cn(
+          "fixed inset-y-0 left-0 z-40 w-64 bg-background border-r transform transition-transform duration-200 ease-in-out md:translate-x-0",
+          isOpen ? "translate-x-0" : "-translate-x-full",
+        )}
+      >
+        <div className="flex flex-col h-full">
+          <div className="flex items-center justify-center h-16 border-b px-4">
+            <h1 className="text-xl font-bold">Moct Platform</h1>
+          </div>
+
+          <nav className="flex-1 overflow-y-auto py-6 px-4">
+            <ul className="space-y-2">
+              {navItems.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                      pathname === item.href
+                        ? "bg-primary text-primary-foreground"
+                        : "hover:bg-accent",
+                    )}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.icon}
+                    <span>{item.title}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className="p-4 border-t">
+            <div className="flex flex-col space-y-2">
+              <Link
+                href="/settings"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium hover:bg-accent transition-colors"
+              >
+                <Settings className="h-4 w-4" />
+                <span>Settings</span>
+              </Link>
+              <Link
+                href="/logout"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-destructive hover:bg-destructive/10 transition-colors"
+              >
+                <LogOut className="h-4 w-4" />
+                <span>Logout</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Overlay for mobile */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-30 md:hidden"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+    </>
   );
 }

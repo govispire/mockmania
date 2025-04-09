@@ -1,7 +1,8 @@
+
 "use client";
 
-import { SalesPerformance } from "@/components/owner/SalesPerformance";
 import { DashboardLayout } from "@/components/layouts/MainLayout";
+import { SalesPerformance } from "@/components/owner/SalesPerformance";
 
 const salesPerformanceData = {
   todaySales: "₹24,500",

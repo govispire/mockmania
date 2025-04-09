@@ -1,3 +1,4 @@
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -9,16 +10,12 @@ const nextConfig = {
       },
     ],
   },
-  // Disable SWC minification to avoid plugin issues
-  swcMinify: false,
 };
 
 if (process.env.NEXT_PUBLIC_TEMPO) {
-  nextConfig["experimental"] = {
-    // Use babel instead of SWC plugins to avoid compatibility issues
+  nextConfig.experimental = {
     swcPlugins: [],
   };
-  // Force using Babel for Tempo environment
   nextConfig.transpilePackages = ["@swc/core"];
 }
 

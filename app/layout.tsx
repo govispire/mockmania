@@ -1,3 +1,4 @@
+
 import { Providers } from "./providers";
 import "./globals.css";
 import { TempoInit } from "./tempo-init";
@@ -15,9 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
-      <body>
-        <Script src="https://api.tempolabs.ai/proxy-asset?url=https://storage.googleapis.com/tempo-public-assets/error-handling.js" />
+      <body suppressHydrationWarning>
+        <Script 
+          src="https://api.tempolabs.ai/proxy-asset?url=https://storage.googleapis.com/tempo-public-assets/error-handling.js"
+          strategy="lazyOnload"
+        />
         <Providers>
           <TempoInit />
           {children}

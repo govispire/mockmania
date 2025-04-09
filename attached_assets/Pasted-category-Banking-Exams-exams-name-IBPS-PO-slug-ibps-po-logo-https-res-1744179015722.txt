@@ -1,0 +1,38 @@
+category: "Banking Exams",
+    exams: [
+      { name: "IBPS PO", slug: "ibps-po", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125077/ibps_ygpzwj.webp" },
+      { name: "IBPS Clerk", slug: "ibps-clerk", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125077/ibps_ygpzwj.webp" },
+      { name: "IBPS SO", slug: "ibps-so", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125077/ibps_ygpzwj.webp" },
+      { name: "SBI PO", slug: "sbi-po", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125088/sbi_po_enyflu.webp" },
+      { name: "SBI Clerk", slug: "sbi-clerk", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125088/sbi_po_enyflu.webp" },
+      { name: "RBI Grade B", slug: "rbi-grade-b", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125087/reservebank_of_india_jlgv5o.webp" },
+      { name: "RBI Assistant", slug: "rbi-assistant", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125087/reservebank_of_india_jlgv5o.webp" },
+      { name: "NABARD Grade A & B", slug: "nabard-grade-a-b", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125083/nabard-bank_xsbsvi.webp" },
+      { name: "IDBI Bank Executive", slug: "idbi-executive", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125078/idbi.png_lyvlvv.webp" },
+      { name: "Regional Rural Banks Officer (RRB)", slug: "rrb-officer", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125077/ibps_ygpzwj.webp" },
+    ],https
+  },
+  {
+    category: "SSC Exams",
+    exams: [
+      { name: "SSC CGL", slug: "ssc-cgl", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125092/ssc_rrghxu.webp" },
+      { name: "SSC CHSL", slug: "ssc-chsl", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125092/ssc_rrghxu.webp" },
+      { name: "SSC JE", slug: "ssc-je", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125092/ssc_rrghxu.webp" },
+      { name: "SSC GD Constable", slug: "ssc-gd", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125092/ssc_rrghxu.webp" },
+      { name: "SSC CPO", slug: "ssc-cpo", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125092/ssc_rrghxu.webp" },
+      { name: "SSC Stenographer", slug: "ssc-steno", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125092/ssc_rrghxu.webp" },
+      { name: "SSC MTS", slug: "ssc-mts", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125092/ssc_rrghxu.webp" },
+    ],
+  },
+  {
+    category: "Insurance Exams",
+    exams: [
+      { name: "LIC AAO", slug: "lic-aao", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125083/LIC_uzujcl.webp" },
+      { name: "NIACL AO", slug: "niacl-ao", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125084/niacl_lqfem4.webp" },
+      { name: "UIIC AO", slug: "uiic-ao", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125092/UIIC_oiwt9f.webp" },
+      { name: "OICL AO", slug: "oicl-ao", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125095/uppsc_zguiuh.png" },
+      { name: "GIC Scale I Officer", slug: "gic-scale-1", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125076/GIC_pn8vhp.webp" },
+      { name: "Rural Insurance Exams", slug: "rural-insurance", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125095/uppsc_zguiuh.png" },
+    ],
+  },
+];

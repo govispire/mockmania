@@ -102,28 +102,16 @@ const examCategories = [
   {
     category: "Banking Exams",
     exams: [
-      { name: "IBPS PO", slug: "ibps-po", logo: "/logos/ibps.png" },
-      { name: "IBPS Clerk", slug: "ibps-clerk", logo: "/logos/ibps.png" },
-      { name: "IBPS SO", slug: "ibps-so", logo: "/logos/ibps.png" },
-      { name: "SBI PO", slug: "sbi-po", logo: "/logos/sbi.png" },
-      { name: "SBI Clerk", slug: "sbi-clerk", logo: "/logos/sbi.png" },
-      { name: "RBI Grade B", slug: "rbi-grade-b", logo: "/logos/rbi.png" },
-      { name: "RBI Assistant", slug: "rbi-assistant", logo: "/logos/rbi.png" },
-      {
-        name: "NABARD Grade A & B",
-        slug: "nabard-grade-a-b",
-        logo: "/logos/nabard.png",
-      },
-      {
-        name: "IDBI Bank Executive",
-        slug: "idbi-executive",
-        logo: "/logos/idbi.png",
-      },
-      {
-        name: "Regional Rural Banks Officer (RRB)",
-        slug: "rrb-officer",
-        logo: "/logos/rrb.png",
-      },
+      { name: "IBPS PO", slug: "ibps-po", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125077/ibps_ygpzwj.webp" },
+      { name: "IBPS Clerk", slug: "ibps-clerk", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125077/ibps_ygpzwj.webp" },
+      { name: "IBPS SO", slug: "ibps-so", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125077/ibps_ygpzwj.webp" },
+      { name: "SBI PO", slug: "sbi-po", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125088/sbi_po_enyflu.webp" },
+      { name: "SBI Clerk", slug: "sbi-clerk", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125088/sbi_po_enyflu.webp" },
+      { name: "RBI Grade B", slug: "rbi-grade-b", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125087/reservebank_of_india_jlgv5o.webp" },
+      { name: "RBI Assistant", slug: "rbi-assistant", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125087/reservebank_of_india_jlgv5o.webp" },
+      { name: "NABARD Grade A & B", slug: "nabard-grade-a-b", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125083/nabard-bank_xsbsvi.webp" },
+      { name: "IDBI Bank Executive", slug: "idbi-executive", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125078/idbi.png_lyvlvv.webp" },
+      { name: "Regional Rural Banks Officer (RRB)", slug: "rrb-officer", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125077/ibps_ygpzwj.webp" },
     ],
   },
   {
@@ -155,6 +143,15 @@ const examCategories = [
         slug: "rural-insurance",
         logo: "/logos/rural.png",
       },
+    ],
+  },
+  {
+    category: "Railways",
+    exams: [
+      { name: "RRB NTPC", slug: "rrb-ntpc", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125088/RRB-NTPC_scjv3q.webp" },
+      { name: "RRB ALP", slug: "rrb-alp", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125088/RRB-NTPC_scjv3q.webp" },
+      { name: "RRB JE", slug: "rrb-je", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125088/RRB-NTPC_scjv3q.webp" },
+      { name: "RRB Group D", slug: "rrb-group-d", logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125088/RRB-NTPC_scjv3q.webp" },
     ],
   },
 ];

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -221,8 +222,12 @@ export default function TestsPage() {
                     className="p-4 hover:shadow-lg transition-all cursor-pointer flex flex-col items-center text-center"
                     onClick={() => router.push(`/tests/${exam.slug}`)}
                   >
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
-                      <BookOpen className="w-6 h-6 text-primary" />
+                    <div className="w-12 h-12 mb-3 relative">
+                      <img 
+                        src={exam.logo}
+                        alt={exam.name}
+                        className="w-full h-full object-contain"
+                      />
                     </div>
                     <span className="font-medium">{exam.name}</span>
                   </Card>

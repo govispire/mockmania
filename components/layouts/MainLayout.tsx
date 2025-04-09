@@ -14,14 +14,14 @@ export function DashboardLayout({
   role?: "student" | "admin" | "employee" | "owner";
 }) {
   return (
-    <div className="flex min-h-screen bg-background">
+    <div className="h-screen flex overflow-hidden bg-background">
       {/* Sidebar */}
-      <div className="fixed inset-y-0 left-0 z-30 w-64 transform transition-transform duration-200 ease-in-out -translate-x-full md:translate-x-0">
+      <aside className="hidden md:block w-64 bg-background border-r">
         {role === "owner" ? <OwnerSidebar /> : <Sidebar role={role} />}
-      </div>
+      </aside>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col min-h-screen w-full md:pl-64">
+      <div className="flex-1 flex flex-col min-h-screen overflow-hidden">
         {/* Top Navigation */}
         <header className="sticky top-0 z-20 bg-card border-b">
           <div className="flex h-16 items-center justify-between px-4">
@@ -48,7 +48,7 @@ export function DashboardLayout({
         </header>
 
         {/* Page Content */}
-        <main className="flex-1 w-full bg-background">
+        <main className="flex-1 overflow-auto bg-background">
           <div className="p-4">
             <div className="mx-auto max-w-7xl">
               {children}

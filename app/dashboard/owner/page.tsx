@@ -146,7 +146,39 @@ export default function OwnerDashboard() {
               { feature: "Calendar", usage: 250 }
             ]
           }} />
-          <Feedback />
+          <Feedback data={{
+            testRatings: {
+              averageRating: 4.2,
+              totalRatings: 1250,
+              distribution: [750, 300, 150, 40, 10]
+            },
+            courseRatings: {
+              averageRating: 4.5,
+              totalRatings: 980,
+              distribution: [600, 250, 100, 20, 10]
+            },
+            reviews: [
+              {
+                id: "REV-001",
+                user: "John Smith",
+                rating: 5,
+                comment: "Excellent course material and teaching methodology",
+                date: "2024-01-15",
+                type: "course",
+                itemName: "IBPS Complete Course"
+              }
+            ],
+            commonComplaints: [
+              {
+                issue: "Video buffering",
+                count: 45
+              },
+              {
+                issue: "Quiz loading time",
+                count: 32
+              }
+            ]
+          }} />
         </div>
       </div>
     </DashboardLayout>

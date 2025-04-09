@@ -223,10 +223,13 @@ export default function TestsPage() {
                     onClick={() => router.push(`/tests/${exam.slug}`)}
                   >
                     <div className="w-12 h-12 mb-3 relative">
-                      <img 
+                      <Image 
                         src={exam.logo}
                         alt={exam.name}
+                        width={48}
+                        height={48}
                         className="w-full h-full object-contain"
+                        unoptimized
                       />
                     </div>
                     <span className="font-medium">{exam.name}</span>

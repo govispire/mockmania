@@ -6,8 +6,17 @@ import { PerformanceChart } from "@/components/common/PerformanceChart";
 import { SalesPerformance } from "@/components/owner/SalesPerformance";
 import { UserActivity } from "@/components/owner/UserActivity";
 import { RevenueBreakdown } from "@/components/owner/RevenueBreakdown";
-import { PerformanceAnalysis } from "@/components/owner/PerformanceAnalysis";
-import { UserBehavior } from "@/components/owner/UserBehavior";
+import dynamic from 'next/dynamic';
+
+const PerformanceAnalysis = dynamic(() => import("@/components/owner/PerformanceAnalysis"), {
+  loading: () => <div>Loading...</div>,
+  ssr: false
+});
+
+const UserBehavior = dynamic(() => import("@/components/owner/UserBehavior"), {
+  loading: () => <div>Loading...</div>,
+  ssr: false
+});
 import { Feedback } from "@/components/owner/Feedback";
 import { DollarSign, Users, TrendingUp, Activity } from "lucide-react";
 import { Card } from "@/components/ui/card";

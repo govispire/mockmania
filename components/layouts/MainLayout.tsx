@@ -1,9 +1,10 @@
 "use client";
 
+import { memo } from "react";
 import { Sidebar } from "@/components/layouts/Sidebar";
 import { OwnerSidebar } from "@/components/owner/LeftSidebar";
 
-export function DashboardLayout({
+export const DashboardLayout = memo(function DashboardLayout({
   children,
   role = "student",
 }: {
@@ -30,4 +31,4 @@ export function DashboardLayout({
       </div>
     </div>
   );
-}
+});

@@ -102,7 +102,32 @@ export default function OwnerDashboard() {
               }
             ]
           }} />
-          <PerformanceAnalysis />
+          <PerformanceAnalysis data={{
+            topCourses: [
+              { name: "IBPS Complete Course", revenue: 45000, students: 150 },
+              { name: "SBI PO Course", revenue: 38000, students: 120 },
+              { name: "Banking Foundation", revenue: 32000, students: 95 }
+            ],
+            topTestPackages: [
+              { name: "Mock Test Series A", purchases: 250 },
+              { name: "Practice Pack Plus", purchases: 180 }
+            ],
+            topExams: [
+              { name: "Bank PO", interest: 1200 },
+              { name: "SSC", interest: 980 }
+            ],
+            examCategories: [
+              { name: "Banking", signups: 450, dropouts: 30 },
+              { name: "Railway", signups: 380, dropouts: 25 }
+            ],
+            dailySignups: [
+              { date: "2024-01-01", signups: 45, conversions: 12 },
+              { date: "2024-01-02", signups: 52, conversions: 15 },
+              { date: "2024-01-03", signups: 48, conversions: 18 },
+              { date: "2024-01-04", signups: 60, conversions: 22 },
+              { date: "2024-01-05", signups: 55, conversions: 20 }
+            ]
+          }} />
           <UserBehavior />
           <Feedback />
         </div>

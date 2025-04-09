@@ -3,8 +3,9 @@ import { Providers } from "./providers";
 import "./globals.css";
 import { TempoInit } from "./tempo-init";
 import Script from "next/script";
+import { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Moct Platform",
   description: "A comprehensive platform for exam preparation",
 };

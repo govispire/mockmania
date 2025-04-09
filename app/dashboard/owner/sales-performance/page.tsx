@@ -1,6 +1,6 @@
 "use client";
 
-import { SalesPerformance } from "@/components/app/dashboard/salesperformance";
+import { SalesPerformance } from "@/components/owner/SalesPerformance";
 
 const salesPerformanceData = {
   todaySales: "₹24,500",

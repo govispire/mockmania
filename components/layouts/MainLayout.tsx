@@ -15,7 +15,9 @@ export function DashboardLayout({
   return (
     <div className="h-screen flex overflow-hidden bg-background">
       {/* Sidebar */}
-    
+      <div className="hidden md:flex md:w-64 md:flex-col">
+        <Sidebar role={role} />
+      </div>
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col min-h-screen overflow-hidden">

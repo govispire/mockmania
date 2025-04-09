@@ -1,6 +1,8 @@
+
 "use client";
 
 import { SalesPerformance } from "@/components/owner/SalesPerformance";
+import { DashboardLayout } from "@/components/layouts/MainLayout";
 
 const salesPerformanceData = {
   todaySales: "₹24,500",
@@ -12,14 +14,16 @@ const salesPerformanceData = {
   mostPurchasedCourse: "Banking Foundation"
 };
 
-export default function salesperformancepage() {
+export default function SalesPerformancePage() {
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold">Sales Performance</h1>
-        <p className="text-muted-foreground">Track sales metrics and performance</p>
+    <DashboardLayout role="owner">
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-3xl font-bold">Sales Performance</h1>
+          <p className="text-muted-foreground">Track sales metrics and performance</p>
+        </div>
+        <SalesPerformance data={salesPerformanceData} />
       </div>
-      <SalesPerformance data={salesPerformanceData} />
-    </div>
+    </DashboardLayout>
   );
 }

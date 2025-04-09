@@ -1,7 +1,7 @@
 
 "use client";
 
-import { Sidebar } from "@/components/layouts/Sidebar";
+import { Sidebar } from "./Sidebar";
 import { Bell, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { OwnerSidebar } from "@/components/owner/LeftSidebar";

@@ -4,7 +4,6 @@
 import { Sidebar } from "./Sidebar";
 import { Bell, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { OwnerSidebar } from "@/components/owner/LeftSidebar";
 
 export function DashboardLayout({
   children,
@@ -17,7 +16,7 @@ export function DashboardLayout({
     <div className="h-screen flex overflow-hidden bg-background">
       {/* Sidebar */}
       <aside className="hidden md:block w-64 bg-background border-r">
-        {role === "owner" ? <OwnerSidebar /> : <Sidebar role={role} />}
+        <Sidebar role={role} />
       </aside>
 
       {/* Main Content */}
@@ -31,7 +30,7 @@ export function DashboardLayout({
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               </button>
-              <h1 className="text-xl font-bold">Moct Platform</h1>
+              <h1 className="text-xl font-bold md:hidden">Moct Platform</h1>
             </div>
             <div className="flex items-center space-x-2 md:space-x-4">
               <Button variant="ghost" size="icon" className="hidden md:flex">

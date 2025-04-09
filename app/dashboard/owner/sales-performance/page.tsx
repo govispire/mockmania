@@ -1,6 +1,6 @@
 "use client";
 
-import { SalesPerformance } from "@/components/owner/SalesPerformance";
+import { SalesPerformance } from "@/components/app/dashboard/salesperformance";
 
 const salesPerformanceData = {
   todaySales: "₹24,500",
@@ -12,7 +12,7 @@ const salesPerformanceData = {
   mostPurchasedCourse: "Banking Foundation"
 };
 
-export default function SalesPerformancePage() {
+export default function salesperformancepage() {
   return (
     <div className="space-y-6">
       <div>

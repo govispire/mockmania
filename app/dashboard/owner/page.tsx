@@ -128,7 +128,24 @@ export default function OwnerDashboard() {
               { date: "2024-01-05", signups: 55, conversions: 20 }
             ]
           }} />
-          <UserBehavior />
+          <UserBehavior data={{
+            newVsReturning: [
+              { name: "New Users", value: 35, color: "#0088FE" },
+              { name: "Returning Users", value: 65, color: "#00C49F" }
+            ],
+            leftWithoutBuying: 450,
+            incompleteTests: 180,
+            averageTimeOnPlatform: [
+              { date: "2024-01-01", minutes: 45 },
+              { date: "2024-01-02", minutes: 48 },
+              { date: "2024-01-03", minutes: 52 }
+            ],
+            mostUsedFeatures: [
+              { feature: "Tests", usage: 450 },
+              { feature: "Courses", usage: 380 },
+              { feature: "Calendar", usage: 250 }
+            ]
+          }} />
           <Feedback />
         </div>
       </div>

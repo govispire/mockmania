@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -46,6 +47,34 @@ export default function ExamPage({ params }: { params: { exam: string } }) {
         prelims: ["full", "sectional", "previous", "speed"],
         mains: ["full", "sectional", "previous", "speed"]
       }
+    },
+    "sbi-clerk": {
+      name: "SBI Clerk 2025",
+      logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125088/sbi_po_enyflu.webp",
+      tabs: ["prelims", "mains"],
+      types: {
+        prelims: ["full", "sectional", "previous", "speed"],
+        mains: ["full", "sectional", "previous", "speed"]
+      }
+    },
+    "rbi-grade-b": {
+      name: "RBI Grade B 2025",
+      logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125087/reservebank_of_india_jlgv5o.webp",
+      tabs: ["phase-1", "phase-2", "interview"],
+      types: {
+        "phase-1": ["full", "sectional", "previous", "speed"],
+        "phase-2": ["full", "sectional", "previous", "speed"],
+        interview: ["mock", "hr", "technical"]
+      }
+    },
+    "rbi-assistant": {
+      name: "RBI Assistant 2025",
+      logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125087/reservebank_of_india_jlgv5o.webp",
+      tabs: ["prelims", "mains"],
+      types: {
+        prelims: ["full", "sectional", "previous", "speed"],
+        mains: ["full", "sectional", "previous", "speed"]
+      }
     }
   };
 
@@ -62,7 +91,16 @@ export default function ExamPage({ params }: { params: { exam: string } }) {
     technical: "Technical Interview"
   };
 
-  const exam = examData[params.exam as keyof typeof examData] || examData["ibps-po"];
+  const examSlug = params.exam as keyof typeof examData;
+  const exam = examData[examSlug] || {
+    name: examSlug.toUpperCase().replace(/-/g, ' '),
+    logo: `https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125077/${examSlug.split('-')[0]}_ygpzwj.webp`,
+    tabs: ["prelims", "mains"],
+    types: {
+      prelims: ["full", "sectional", "previous", "speed"],
+      mains: ["full", "sectional", "previous", "speed"]
+    }
+  };
 
   const generateTests = (tab: string, type: string) => {
     const baseTests = Array.from({ length: 5 }, (_, i) => ({
@@ -109,7 +147,7 @@ export default function ExamPage({ params }: { params: { exam: string } }) {
           <TabsList className="grid grid-cols-4">
             {exam.tabs.map((tab) => (
               <TabsTrigger key={tab} value={tab} className="capitalize">
-                {tab}
+                {tab.replace(/-/g, ' ')}
               </TabsTrigger>
             ))}
           </TabsList>
@@ -165,7 +203,7 @@ export default function ExamPage({ params }: { params: { exam: string } }) {
                         </div>
                       </div>
                       <ExamButton
-                        examId={`${params.exam}-${selectedTab}-${selectedTestType}-${test.id}`}
+                        examId={`${examSlug}-${selectedTab}-${selectedTestType}-${test.id}`}
                         variant={test.progress > 0 ? "outline" : "default"}
                       >
                         {test.progress > 0 ? "Resume" : "Start"}

@@ -230,6 +230,8 @@ export default function TestsPage() {
                         height={48}
                         className="object-contain"
                         priority
+                        loading="eager"
+                        sizes="48px"
                       />
                     </div>
                     <span className="font-medium">{exam.name}</span>

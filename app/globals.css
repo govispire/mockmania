@@ -100,3 +100,9 @@
 .grid-cols-responsive {
   @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4;
 }
+
+@media (min-width: 768px) {
+  .md\:pl-64 {
+    padding-left: 8rem;
+  }
+}

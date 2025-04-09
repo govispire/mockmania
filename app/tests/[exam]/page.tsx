@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { DashboardLayout } from "@/components/layouts/MainLayout";
+import { ExamButton } from "@/components/ExamButton";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -17,18 +18,31 @@ export default function ExamPage({ params }: { params: { exam: string } }) {
   const progress = 70;
   const totalMarks = 140;
 
-  const examData = {
-    "ibps-po": {
-      name: "IBPS PO 2025",
-      logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125077/ibps_ygpzwj.webp",
+  const generateExamData = (examSlug: string) => {
+    const examNames: Record<string, string> = {
+      "ibps-po": "IBPS PO 2025",
+      "ibps-clerk": "IBPS Clerk 2025",
+      "ibps-so": "IBPS SO 2025",
+      "sbi-po": "SBI PO 2025",
+      "sbi-clerk": "SBI Clerk 2025",
+      "rbi-grade-b": "RBI Grade B 2025",
+      "rbi-assistant": "RBI Assistant 2025",
+      "nabard-grade-a-b": "NABARD Grade A & B 2025",
+      "idbi-executive": "IDBI Executive 2025",
+      "rrb-officer": "RRB Officer 2025"
+    };
+
+    return {
+      name: examNames[examSlug] || examSlug.toUpperCase().replace(/-/g, ' '),
+      logo: `https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125077/${examSlug.split('-')[0]}_ygpzwj.webp`,
       progress: {
-        prelims: 50,
-        mains: 50
+        prelims: Math.floor(Math.random() * 100),
+        mains: Math.floor(Math.random() * 100)
       }
-    }
+    };
   };
 
-  const exam = examData[params.exam as keyof typeof examData] || examData["ibps-po"];
+  const exam = generateExamData(params.exam);
 
   const mainTabs = [
     { id: "prelims", name: "Prelims" },
@@ -180,11 +194,12 @@ export default function ExamPage({ params }: { params: { exam: string } }) {
                           </div>
                         </div>
                       </div>
-                      <Button
+                      <ExamButton
+                        examId={`${params.exam}-${test.id}`}
                         variant={test.progress > 0 ? "outline" : "default"}
                       >
                         {test.progress > 0 ? "Resume" : "Start"}
-                      </Button>
+                      </ExamButton>
                     </div>
                   </Card>
                 ))}

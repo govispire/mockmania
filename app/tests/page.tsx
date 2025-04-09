@@ -222,14 +222,12 @@ export default function TestsPage() {
                     className="p-4 hover:shadow-lg transition-all cursor-pointer flex flex-col items-center text-center"
                     onClick={() => router.push(`/tests/${exam.slug}`)}
                   >
-                    <div className="w-12 h-12 mb-3 relative">
-                      <Image 
+                    <div className="w-12 h-12 mb-3 relative flex items-center justify-center">
+                      <img 
                         src={exam.logo}
                         alt={exam.name}
-                        width={48}
-                        height={48}
-                        className="w-full h-full object-contain"
-                        unoptimized
+                        style={{ maxWidth: '100%', maxHeight: '100%' }}
+                        className="object-contain"
                       />
                     </div>
                     <span className="font-medium">{exam.name}</span>

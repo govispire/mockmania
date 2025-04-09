@@ -54,7 +54,21 @@ export default function OwnerDashboard() {
             mostPopularTest: "SBI PO Mock Tests",
             mostPurchasedCourse: "Banking Foundation"
           }} />
-          <UserActivity />
+          <UserActivity data={{
+            currentActiveUsers: 245,
+            totalLoggedInUsers: {
+              daily: 1200,
+              weekly: 5600,
+              monthly: 18000
+            },
+            purchasedUsers: 850,
+            nonPurchasedUsers: 350,
+            userEngagement: [
+              { name: "High", value: 35, color: "#0088FE" },
+              { name: "Medium", value: 45, color: "#00C49F" },
+              { name: "Low", value: 20, color: "#FFBB28" }
+            ]
+          }} />
           <RevenueBreakdown />
           <PerformanceAnalysis />
           <UserBehavior />

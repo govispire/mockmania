@@ -159,12 +159,12 @@ export function Sidebar({
   const navItems = roleBasedNavItems[role] || roleBasedNavItems.student;
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full bg-background">
       <div className="flex items-center justify-center h-16 border-b px-4">
         <h1 className="text-xl font-bold">Moct Platform</h1>
       </div>
 
-      <nav className="flex-1 overflow-y-auto py-6 px-4">
+      <nav className="flex-1 overflow-y-auto p-4">
         <ul className="space-y-2">
           {navItems.map((item) => (
             <li key={item.href}>

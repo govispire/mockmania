@@ -223,11 +223,13 @@ export default function TestsPage() {
                     onClick={() => router.push(`/tests/${exam.slug}`)}
                   >
                     <div className="w-12 h-12 mb-3 relative flex items-center justify-center">
-                      <img 
+                      <Image 
                         src={exam.logo}
                         alt={exam.name}
-                        style={{ maxWidth: '100%', maxHeight: '100%' }}
+                        width={48}
+                        height={48}
                         className="object-contain"
+                        priority
                       />
                     </div>
                     <span className="font-medium">{exam.name}</span>

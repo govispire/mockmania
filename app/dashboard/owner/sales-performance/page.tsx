@@ -1,4 +1,3 @@
-
 "use client";
 
 import { SalesPerformance } from "@/components/owner/SalesPerformance";

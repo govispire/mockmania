@@ -21,7 +21,7 @@ export function DashboardLayout({
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col min-h-screen w-full md:pl-64">
+      <div className="flex-1 flex flex-col min-h-screen w-full md:pl-32">
         {/* Top Navigation */}
         <header className="sticky top-0 z-20 bg-card border-b">
           <div className="flex h-16 items-center justify-between px-4">

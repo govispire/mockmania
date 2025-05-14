@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -141,7 +140,7 @@ export default function HomePage() {
             <div className="space-y-6">
               <h1 className="text-5xl font-bold leading-tight">
                 Prepare for Government Exams{" "}
-                <span className="text-primary">Without Distractions!</span>
+                <span className="text-primary">Without Distractions&quot;!</span>
               </h1>
               <p className="text-xl text-muted-foreground">
                 GovIspire offers personalized mentorship and task tracking to ensure
@@ -246,7 +245,7 @@ export default function HomePage() {
       <section className="py-20 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Student Success Stories</h2>
+            <h2 className="text-3xl font-bold mb-4">Student Success Stories&quot;</h2>
             <p className="text-muted-foreground">
               See what our students have to say
             </p>
@@ -262,7 +261,7 @@ export default function HomePage() {
                     />
                   ))}
                 </div>
-                <p className="text-lg mb-4">"{testimonial.content}"</p>
+                <p className="text-lg mb-4">&quot;{testimonial.content}&quot;</p>
                 <div>
                   <div className="font-semibold">{testimonial.name}</div>
                   <div className="text-sm text-muted-foreground">

@@ -1,10 +1,10 @@
-
 "use client";
 
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
@@ -51,10 +51,12 @@ function LoginComponent() {
 
         <div className="space-y-4">
           <Button variant="outline" className="w-full h-14 font-semibold">
-            <img
+            <Image
               src="https://www.google.com/favicon.ico"
               alt="Google"
-              className="w-5 h-5 mr-2"
+              className="mr-2"
+              width={20}
+              height={20}
             />
             Sign in with Google
           </Button>
@@ -126,7 +128,7 @@ function LoginComponent() {
           )}
 
           <p className="text-center text-sm text-muted-foreground">
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link
               href="/register"
               className="text-primary font-medium hover:underline"

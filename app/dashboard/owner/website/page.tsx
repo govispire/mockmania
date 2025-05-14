@@ -1,8 +1,7 @@
-
 "use client";
 
-import { DashboardLayout } from "@/components/layouts/MainLayout";
 import { WebsitePerformance } from "@/components/owner/WebsitePerformance";
+import { DashboardLayout } from "@/components/layouts/MainLayout";
 
 const websiteData = {
   activeUsers: 245,
@@ -32,7 +31,7 @@ const websiteData = {
 
 export default function WebsitePage() {
   return (
-    <DashboardLayout>
+    <DashboardLayout role="owner">
       <WebsitePerformance data={websiteData} />
     </DashboardLayout>
   );

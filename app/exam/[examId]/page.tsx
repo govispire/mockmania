@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
+import Image from "next/image";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { Info, ChevronLeft, ChevronRight } from "lucide-react";
+import { Info, ChevronLeft, ChevronRight, Clock } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface Question {
@@ -461,7 +462,13 @@ export default function ExamPage() {
       <header className="bg-white border-b p-2">
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-4">
-            <img src="/logos/ibps.png" alt="IBPS Logo" className="h-8 w-8" />
+            <Image 
+              src="/logos/ibps.png" 
+              alt="IBPS Logo" 
+              width={32} 
+              height={32}
+              className="h-8 w-8" 
+            />
             <h1 className="text-lg font-bold text-center flex-1">
               {exam.title}
             </h1>
@@ -633,9 +640,11 @@ export default function ExamPage() {
         >
           {/* User info */}
           <div className="p-3 border-b flex items-center">
-            <img
+            <Image
               src="https://api.dicebear.com/7.x/avataaars/svg?seed=John"
               alt="Profile"
+              width={56}
+              height={56}
               className="h-14 w-14 rounded-full bg-gray-200 mr-3"
             />
             <div>

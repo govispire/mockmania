@@ -1,4 +1,3 @@
-
 "use client";
 
 import { DashboardLayout } from "@/components/layouts/MainLayout";
@@ -57,7 +56,7 @@ export default function RevenuePage() {
       <div className="space-y-6">
         <div>
           <h1 className="text-3xl font-bold">Revenue Overview</h1>
-          <p className="text-muted-foreground">Monitor your platform's financial performance</p>
+          <p className="text-muted-foreground">Monitor your platform&apos;s financial performance</p>
         </div>
         <RevenueBreakdown data={revenueBreakdownData} />
       </div>

@@ -1,4 +1,3 @@
-
 import { Card } from "@/components/ui/card";
 
 interface SalesPerformanceData {
@@ -15,7 +14,7 @@ export function SalesPerformance({ data }: { data: SalesPerformanceData }) {
   return (
     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
       <Card className="p-6">
-        <h3 className="text-sm font-medium">Today's Sales</h3>
+        <h3 className="text-sm font-medium">Today&apos;s Sales</h3>
         <p className="mt-2 text-2xl font-bold">{data.todaySales}</p>
       </Card>
       <Card className="p-6">

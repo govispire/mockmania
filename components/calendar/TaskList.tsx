@@ -236,7 +236,7 @@ export function TaskList({ tasks, onAddTask, onUpdateTask, onDeleteTask, onToggl
               {searchQuery || selectedSubject !== "all" || selectedPriority !== "all" ? (
                 <p>No tasks match your filters.</p>
               ) : (
-                <p>No tasks yet. Click "Add Task" to create one.</p>
+                <p>No tasks yet. Click &quot;Add Task&quot; to create one.</p>
               )}
             </div>
           )}

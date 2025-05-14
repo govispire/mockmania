@@ -1,10 +1,10 @@
-
 "use client";
 
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
@@ -35,7 +35,7 @@ function RegisterComponent() {
 
         <div className="space-y-4">
           <Button variant="outline" className="w-full h-14 font-semibold">
-            <img src="https://www.google.com/favicon.ico" alt="Google" className="w-5 h-5 mr-2" />
+            <Image src="https://www.google.com/favicon.ico" alt="Google" width={20} height={20} className="mr-2" />
             Sign up with Google
           </Button>
 

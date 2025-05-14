@@ -1,7 +1,7 @@
 "use client";
 
 import { DashboardLayout } from "@/components/layouts/MainLayout";
-import { Feedback } from "../Feedback";
+import { Feedback } from "@/components/owner/Feedback";
 
 // Mock data for Feedback component
 const feedbackData = {

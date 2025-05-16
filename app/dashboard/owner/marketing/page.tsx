@@ -1,7 +1,7 @@
 "use client";
 
 import { DashboardLayout } from "@/components/layouts/MainLayout";
-import { MarketingPromotions } from "@/components/owner/MarketingPromotions";
+import { MarketingPromotions } from "@/frontend/components/owner/MarketingPromotions";
 
 const marketingPromotionsData = {
   campaigns: [
@@ -52,12 +52,12 @@ const marketingPromotionsData = {
   ]
 };
 
-export default function MarketingPromotionsPage() { //Renamed the page
+export default function MarketingPromotionsPage() {
   return (
     <DashboardLayout role="owner">
       <div className="space-y-6">
         <div>
-          <h1 className="text-3xl font-bold">Marketing Promotions</h1> {/*Renamed the heading*/}
+          <h1 className="text-3xl font-bold">Marketing Promotions</h1>
           <p className="text-muted-foreground">Manage your marketing campaigns and promotions</p>
         </div>
         <MarketingPromotions data={marketingPromotionsData} />

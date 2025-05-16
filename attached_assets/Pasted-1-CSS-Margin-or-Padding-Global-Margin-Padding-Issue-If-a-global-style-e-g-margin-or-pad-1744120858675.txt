@@ -1,0 +1,122 @@
+1. CSS Margin or Padding:
+
+    Global Margin/Padding Issue: If a global style (e.g., margin or padding) is being applied to the body or container of your page, it might cause unwanted spacing. Check for unnecessary padding or margins applied to the body, html, or the container of the layout components.
+
+How to Fix:
+
+    Make sure there's no global padding/margin defined that creates a gap.
+
+    For example:
+
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
+
+2. Flexbox or Grid Layout Misconfiguration:
+
+    If you're using a Flexbox or Grid layout, there might be an issue with the container's child elements (sidebar and main content) not being sized or aligned properly, causing spacing issues.
+
+How to Fix:
+
+    If using Flexbox: Ensure that the parent container is properly set with display: flex, and the sidebar is not causing extra space.
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;  /* Ensures no gap between sidebar and main content */
+}
+.sidebar {
+  flex-shrink: 0;
+  width: 250px; /* Set fixed width */
+}
+.main-content {
+  flex-grow: 1;
+}
+
+If using Grid: Ensure the grid is set correctly with proper column widths and no gaps.
+
+    .layout {
+      display: grid;
+      grid-template-columns: 250px 1fr; /* Sidebar and content */
+    }
+
+3. Overflow Issues:
+
+    If the content inside the main content area is overflowing (e.g., large images or text), it could push the content outside, causing a gap.
+
+How to Fix:
+
+    Use overflow-x: hidden; on the main container to avoid horizontal scroll and unintended gaps.
+
+    .main-content {
+      overflow-x: hidden;
+    }
+
+4. Incorrect Width or Positioning of Sidebar:
+
+    The sidebar might not be positioned correctly, or it could be pushed out due to incorrect position, left, or right properties.
+
+How to Fix:
+
+    Make sure the sidebar is positioned correctly relative to the main content.
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px; /* Set fixed width */
+      height: 100vh;
+    }
+    .main-content {
+      margin-left: 250px; /* Ensure content doesn't overlap */
+    }
+
+5. Content Overflow (Padding/Margin in Child Elements):
+
+    The elements inside the main content may have margins or paddings that are adding to the gap.
+
+How to Fix:
+
+    Ensure there's no unwanted margin/padding within the child components inside the main content area.
+
+    .main-content > * {
+      margin: 0;
+      padding: 0;
+    }
+
+6. Layout Component or Wrapper:
+
+    Check if the component wrapping the left sidebar and main content (such as a global layout component) is causing any layout issues.
+
+How to Fix:
+
+    Verify that the parent component (e.g., Layout.tsx) for your pages is configured to handle both the sidebar and the main content properly. Ensure that it doesn’t have unnecessary margin or padding applied.
+
+Example layout:
+
+const Layout = ({ children }) => (
+  <div className="layout-container">
+    <Sidebar />
+    <main className="main-content">
+      {children}
+    </main>
+  </div>
+);
+
+7. Viewport/Media Query Issues:
+
+    If the gap appears specifically on certain screen sizes, it could be an issue with your media queries.
+
+How to Fix:
+
+    Check for any media queries that might be causing the gap. For example:
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    display: none; /* Hide sidebar on mobile */
+  }
+  .main-content {
+    margin-left: 0;
+  }
+}

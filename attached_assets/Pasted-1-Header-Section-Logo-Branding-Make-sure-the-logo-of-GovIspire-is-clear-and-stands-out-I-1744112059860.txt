@@ -1,0 +1,83 @@
+1. Header Section
+
+    Logo & Branding: Make sure the logo of GovIspire is clear and stands out. It should be placed at the top-left.
+
+    Navigation Bar: Include links to important sections (e.g., Courses, Test Series, Blog, Sign Up/Login).
+
+    Call to Action (CTA): A prominent "Start Free Trial" or "Get Started" button with a contrasting color to encourage action.
+
+    Search Bar: Allow users to search for exams, courses, or specific resources.
+
+2. Main Hero Section
+
+    Headline: Make the key value proposition very clear, something like:
+
+        "Prepare for Government Exams Without Distractions!"
+
+    Supporting Text: Add a brief description:
+
+        "GovIspire offers personalized mentorship and task tracking to ensure students stay focused and improve exam scores faster. No more distractions!"
+
+    CTA Button: Another "Start Free Trial" or "Try Free Test" button for easy access.
+
+    Visual Element: Use a background image or video of students studying with a focus on a clean workspace to emphasize the distraction-free aspect.
+
+3. Features Section
+
+    Task Management: Highlight the calendar and task management features. Show how students can track and monitor their progress, plan their study time effectively, and get reminders.
+
+    Personalized Mentorship: Explain how each student will have tailored guidance.
+
+    Fast Exam Results: Mention how using these tools helps students crack exams faster.
+
+    Student Reviews: Showcase testimonials from 10,000+ students (mention how the platform helped them).
+
+4. Exam Categories Section
+
+    Tab-Based Navigation: Allow users to explore various exam categories (e.g., Banking, SSC, UPSC, State Exams, etc.). Ensure each category is clickable and shows relevant exams.
+
+    "Take Test" Buttons: After login/registration, each exam within these categories should have a "Take Test" button.
+
+5. Mock Test Section
+
+    Accessible Tests: Once logged in, provide mock test options categorized by exams. Display a "Start Test" button after users are authenticated.
+
+    Free Tests: Offer a limited free test for new users so they can experience the platform.
+
+6. How It Works Section
+
+    Step-by-Step Process: Break down how the platform works:
+
+        Register & Login.
+
+        Select your exam and view the study plan.
+
+        Get personalized mentorship.
+
+        Take mock tests and track progress.
+
+7. Why Choose Us Section
+
+    Distraction-Free Learning: Emphasize the no-distraction environment.
+
+    Exam-Specific Resources: List all the resources for each exam category.
+
+    Proven Track Record: Mention success stories or student achievements with the platform.
+
+8. Student Reviews Section
+
+    Showcase reviews or testimonials from actual students about how GovIspire helped them.
+
+9. Footer Section
+
+    Include essential links like terms of service, privacy policy, contact information, and social media icons.
+
+    Provide links to the mobile app (if available) for easy access to mock tests on the go.
+
+Mobile Optimization
+
+    Responsive Design: Ensure the design works seamlessly on mobile devices.
+
+    Collapsed Navigation: On mobile, use a hamburger menu for navigation.
+
+    CTA Placement: Ensure the CTA buttons are easily accessible and not buried under long text.

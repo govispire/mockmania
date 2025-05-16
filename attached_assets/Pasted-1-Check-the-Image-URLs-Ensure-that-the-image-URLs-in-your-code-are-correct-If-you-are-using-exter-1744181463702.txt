@@ -1,0 +1,55 @@
+1. Check the Image URLs
+
+Ensure that the image URLs in your code are correct. If you are using external URLs (like from Cloudinary or another image hosting service), make sure they are properly formatted and accessible.
+
+For example, check if the URLs in your code like:
+
+logo: "https://res.cloudinary.com/dsyxrhbwb/image/upload/v1744125077/ibps_ygpzwj.webp"
+
+Are correctly pointing to the location of the image and if they load correctly in a browser.
+
+If you're using relative paths (like /logos/ibps.png), make sure the images are in the correct location inside the public directory of your Next.js project.
+2. Next.js Image Component
+
+If you're using the Image component from Next.js (recommended for optimization), make sure to import it and use it like this:
+
+import Image from "next/image";
+
+// Example usage:
+<Image src="/logos/ibps.png" alt="IBPS Logo" width={100} height={100} />
+
+This ensures that images are optimized and handled correctly. You need to provide the width and height properties for the Image component to function properly.
+3. Check if Images Are Being Blocked
+
+If you're using external image URLs, check if they are being blocked or restricted by the browser or network. Sometimes, ad blockers or network restrictions might prevent external resources from loading.
+
+You can check this in the browser's Developer Tools under the "Network" tab. If images aren't loading, it might show up as a failed request.
+4. Verify Image Format and Size
+
+Ensure that your images are in a supported format and are not too large in file size. Next.js supports .jpg, .png, .webp, and .svg formats, but larger images might take longer to load or fail to load on slower connections.
+5. Configure Next.js Image Optimization
+
+If you're using external image URLs with the Image component, you need to specify the domains that are allowed to serve images in the next.config.js file. Example:
+
+// next.config.js
+module.exports = {
+  images: {
+    domains: ['res.cloudinary.com', 'your-image-domain.com'],
+  },
+}
+
+6. Inspect the Logo Class and Styling
+
+If the image is not visible, it could also be a CSS issue where the image is hidden or its size is too small. Double-check your className properties and styles applied to the image or its container. For example:
+
+<div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+  <Image src={exam.logo} alt={exam.name} width={50} height={50} />
+</div>
+
+Here, you should make sure that the w-12 h-12 (width and height classes) are not conflicting with the image size.
+7. Server-Side Rendering and Static Image Imports
+
+If you're using Next.js and SSR (Server-Side Rendering), ensure that the paths to images are available and the images are being properly served from the server during SSR.
+8. Clear Cache
+
+Sometimes, the browser or Next.js might cache the old resources. Try clearing your browser cache or run the Next.js app with the next dev command to see if there is any change.

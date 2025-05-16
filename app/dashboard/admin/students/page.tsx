@@ -1,7 +1,7 @@
 "use client";
 
 import { DashboardLayout } from "@/components/layouts/MainLayout";
-import { StudentManagement } from "@/components/admin/StudentManagement";
+import { StudentManagement } from "@/frontend/components/admin/StudentManagement";
 
 export default function AdminStudentsPage() {
   return (

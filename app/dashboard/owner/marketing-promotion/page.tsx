@@ -1,7 +1,6 @@
-
 "use client";
 
-import { MarketingPromotions } from "@/components/owner/MarketingPromotions";
+import { MarketingPromotions } from "@/frontend/components/owner/MarketingPromotions";
 import { DashboardLayout } from "@/components/layouts/MainLayout";
 
 const marketingData = {

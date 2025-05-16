@@ -33,7 +33,7 @@ interface SettingsManagementProps {
   };
 }
 
-export function SettingsManagement({ data }: SettingsManagementProps) {
+export default function SettingsManagementPage() {
   return (
     <div className="space-y-6">
       <Tabs defaultValue="general">

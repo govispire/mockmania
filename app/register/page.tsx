@@ -98,8 +98,6 @@ function RegisterComponent() {
 }
 
 // Disable SSR for faster client-side rendering
-const RegisterPage = dynamic(() => Promise.resolve(RegisterComponent), {
+export default dynamic(() => Promise.resolve(RegisterComponent), {
   ssr: false,
 });
-
-export default RegisterPage;

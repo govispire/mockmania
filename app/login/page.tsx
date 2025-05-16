@@ -143,8 +143,6 @@ function LoginComponent() {
 }
 
 // Disable SSR for faster client-side rendering
-const LoginPage = dynamic(() => Promise.resolve(LoginComponent), {
+export default dynamic(() => Promise.resolve(LoginComponent), {
   ssr: false,
 });
-
-export default LoginPage;

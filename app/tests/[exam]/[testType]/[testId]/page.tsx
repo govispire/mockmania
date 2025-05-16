@@ -16,13 +16,14 @@ interface Question {
   explanation?: string;
 }
 
-interface PageProps {
+type PageProps = {
   params: {
     exam: string;
     testType: string;
     testId: string;
   };
-}
+  searchParams?: { [key: string]: string | string[] | undefined };
+};
 
 const mockQuestions: Question[] = [
   {

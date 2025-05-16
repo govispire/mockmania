@@ -16,6 +16,14 @@ interface Question {
   explanation?: string;
 }
 
+interface PageProps {
+  params: {
+    exam: string;
+    testType: string;
+    testId: string;
+  };
+}
+
 const mockQuestions: Question[] = [
   {
     id: 1,
@@ -46,13 +54,7 @@ const mockQuestions: Question[] = [
   },
 ];
 
-// Removed generateStaticParams to avoid conflict with "use client"
-
-export default function TestPage({
-  params,
-}: {
-  params: { exam: string; testType: string; testId: string };
-}) {
+export default function TestPage({ params }: PageProps) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [answers, setAnswers] = useState<(number | null)[]>([]);
